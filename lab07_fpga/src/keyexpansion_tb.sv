@@ -1,0 +1,93 @@
+// Wava Chan
+// wchan@g.hmc.edu
+// Nov. 2025
+// Testbench for AddRoundKeyModule
+
+`timescale 1ns/1ns
+
+module testbench_keyExpansion();
+    //set up test signals
+    logic clk, done;
+    logic [127:0] key; 
+    logic [127:0] rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8, rk9, rk10;
+    logic [127:0] rk1_exp, rk2_exp, rk3_exp, rk4_exp, rk5_exp, rk6_exp, rk7_exp, rk8_exp, rk9_exp, rk10_exp;
+
+    //instantiate dut
+    KeyExpansion dut(.key(key), .clk(clk),
+                   .rk1(rk1), .rk2(rk2), .rk3(rk3), .rk4(rk4), .rk5(rk5), .rk6(rk6), .rk7(rk7), .rk8(rk8), .rk9(rk9), .rk10(rk10));
+    
+    always
+        begin
+            clk = 1; #5;
+            clk = 0; #5;
+        end
+    
+    // using example 1 from https://www.kavaliro.com/wp-content/uploads/2014/03/AES.pdf
+    initial 
+        begin
+            key = 128'h5468617473206d79204b756e67204675;
+            rk1_exp = 128'hE232FCF191129188B159E4E6D679A293;
+            rk2_exp = 128'h56082007C71AB18F76435569A03AF7FA;
+            rk3_exp = 128'hD2600DE7157ABC686339E901C3031EFB;
+            rk4_exp = 128'hA11202C9B468BEA1D75157A01452495B;
+            rk5_exp = 128'hB1293B3305418592D210D232C6429B69;
+            rk6_exp = 128'hBD3DC2B7B87C47156A6C9527AC2E0E4E;
+            rk7_exp = 128'hCC96ED1674EAAA031E863F24B2A8316A;
+            rk8_exp = 128'h8E51EF21FABB4522E43D7A0656954B6C;
+            rk9_exp = 128'hBFE2BF904559FAB2A16480B4F7F1CBD8;
+            rk10_exp = 128'h28FDDEF86DA4244ACCC0A4FE3B316F26;
+
+                #20; 
+        
+
+            done = 1;
+
+        end
+    
+        // wait until done and then check the result
+    always @(posedge clk) begin
+      if (done) begin
+        if (rk1 == rk1_exp)
+            $display("round 1 key correct");
+        else $display("Error: round key 1 = %h, expected %h",
+            rk1, rk1_exp);
+        if (rk2 == rk2_exp)
+            $display("round 2 key correct");
+        else $display("Error: round key 2 = %h, expected %h",
+            rk2, rk2_exp);
+        if (rk3 == rk3_exp)
+            $display("round 3 key correct");
+        else $display("Error: round key 3 = %h, expected %h",
+            rk3, rk3_exp);
+        if (rk4 == rk4_exp)
+            $display("round 4 key correct");
+        else $display("Error: round key 4 = %h, expected %h",
+            rk4, rk4_exp);
+        if (rk5 == rk5_exp)
+            $display("round 5 key correct");
+        else $display("Error: round key 5 = %h, expected %h",
+            rk5, rk5_exp);
+        if (rk6 == rk6_exp)
+            $display("round 6 key correct");
+        else $display("Error: round key 6 = %h, expected %h",
+            rk6, rk6_exp);
+        if (rk7 == rk7_exp)
+            $display("round 7 key correct");
+        else $display("Error: round key 7 = %h, expected %h",
+            rk7, rk7_exp);
+        if (rk8 == rk8_exp)
+            $display("round 8 key correct");
+        else $display("Error: round key 8 = %h, expected %h",
+            rk8, rk8_exp);
+        if (rk9 == rk9_exp)
+            $display("round 9 key correct");
+        else $display("Error: round key 9 = %h, expected %h",
+            rk9, rk9_exp);
+        if (rk10 == rk10_exp)
+            $display("round 10 key correct");
+        else $display("Error: round key 10 = %h, expected %h",
+            rk10, rk10_exp);
+        $stop();
+      end
+    end
+endmodule 

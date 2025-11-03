@@ -168,6 +168,6 @@ module testbench_keyExpansion();
             rk10, rk10_exp);
         $stop();
       end
-    end
 */
+    end
 endmodule 

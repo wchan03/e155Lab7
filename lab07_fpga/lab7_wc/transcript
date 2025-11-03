@@ -1,0 +1,29 @@
+# Reading pref.tcl
+# //  Questa Lattice OEM Edition-64
+# //  Version 2024.2 win64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project lab7_wc_testing
+# Compile of addroundkey_tb.sv failed with 3 errors.
+# Compile of aes_core_tb.sv was successful.
+# Compile of aes_sbox_tb.sv was successful.
+# Compile of aes_spi_tb.sv was successful.
+# Compile of aes_starter.sv failed with 15 errors.
+# Compile of keyexpansion_tb.sv was successful.
+# Compile of shiftrows_tb.sv failed with 3 errors.
+# 7 compiles, 3 failed with 21 errors.
+# Compile of addroundkey_tb.sv was successful.
+# Compile of aes_starter.sv failed with 15 errors.
+# Compile of keyexpansion_tb.sv failed with 1 errors.
+# Compile of keyexpansion_tb.sv was successful.
+# Compile of shiftrows_tb.sv was successful.

@@ -8,7 +8,7 @@
 module testbench_addroundkey();
     //set up test signals
     logic clk, done;
-    logic [127:0] a, y, y_exp, roundKey; 
+    logic [127:0] a, y, y_exp; 
 
     //instantiate dut
     AddRoundKey dut(.a(a), .clk(clk), .y(y));
@@ -32,7 +32,7 @@ module testbench_addroundkey();
         begin
             a = 128'h6b85d3f040adbb828ad89131cdc42cb3;
             roundKey = 128'ha0fafe1788542cb123a339392a6c7605;
-            //y_exp = 128'h TODO: insert correct values here
+            y_exp = 128'h
 
                 #20; 
             
@@ -43,8 +43,8 @@ module testbench_addroundkey();
             #20
 
             a = 128'h046681e5e0cb199a48f8d37a2806264c;
-	    roundKey = 128'ha0fafe1788542cb123a339392a6c7605;
-	    y_exp = 128'ha49c7ff2689f352b6b5bea43026a5049;
+	        roundKey = 128'ha0fafe1788542cb123a339392a6c7605;
+	        y_exp = 128'ha49c7ff2689f352b6b5bea43026a5049;
 
             done = 1;
 

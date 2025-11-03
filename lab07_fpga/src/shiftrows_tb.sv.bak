@@ -8,10 +8,10 @@
 module testbench_shiftRows();
     //set up test signals
     logic clk, done;
-    logic [127:0] a, y, y_exp; 
+    logic [127:0] roundKey, a, y, y_exp; 
 
     //instantiate dut
-    ShiftRows dut(.key(a), .clk(clk), .y(y));
+    ShiftRows dut(.key(a), .roundKey(roundKey) .clk(clk), .y(y));
 
     always
         begin
@@ -21,13 +21,15 @@ module testbench_shiftRows();
     
     initial 
         begin
-            a = 128'h6c0edb347caa45ed33249ca502834bfb; //round 7 from AES animation video
-            y_exp = 128'h6caa9cfb7c244b343383dbed020e45a5;
+            a = 128'
+            roundKey = 128'
+            y_exp = 128'
 
                 #20; 
             
-            a = 128'hfac3f2ef8d133951d67df3f36cb5e4ed; //round 8 example
-            y_exp = 128'hfa13f3ed8d7de4efd6b5f2516cc339f3;
+            a = 128'
+            roundKey = 128'
+            y_exp = 128'
 
             done = 1;
 

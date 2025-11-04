@@ -85,7 +85,7 @@ module aes_core(input  logic         clk,
 	logic [127:0] rk_in, rk_out, roundKey;
    //logic [1270:0] allRoundKeys = {rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8, rk9, rk10}; //TODO: double check this sizing works out
     int index1 = 127, index2 = 0; 
-    int counter = 0;
+    int counter = 10;
 	logic [7:0] rcon = 8'h01; 
 
     logic [127:0] temptext, y0, y1, y2, y3, a0, a1, a2, a3;
@@ -93,7 +93,7 @@ module aes_core(input  logic         clk,
 
 
     //set up FSM
-    typedef enum logic [7:0] {idle, ARK0, SB1, SB1Delay, SR1, MC1, ARK1, SB2, SB2Delay, SR2, ARK2, finished}
+    typedef enum logic [7:0] {idle, ARK0, ARK0Delay, SB1, SB1Delay, SR1, SR1Delay, MC1, MC1Delay, ARK1, ARK1Delay, SB2, SB2Delay, SR2, SR2Delay, ARK2, ARK2Delay, finished}
     statetype;
       statetype state, nextstate; //TODO delay states for each state?
 	
@@ -106,6 +106,7 @@ module aes_core(input  logic         clk,
     always_comb begin
       case(state)
         idle: begin//reset state
+			nextstate = ARK0;
         end
         ARK0: begin
           nextstate = SB1;
@@ -149,6 +150,7 @@ module aes_core(input  logic         clk,
     always_ff@(posedge clk) begin
       case(state)
         idle: begin//reset state
+			counter <= 0;
         end
         ARK0: begin
           counter <= counter + 1;
@@ -186,6 +188,7 @@ module aes_core(input  logic         clk,
         ARK2: begin
           rk_in <= roundKey; //final round key
 		  roundKey <= rk_out;
+	  rcon = 7'h36;
           counter <= counter + 1;
           a3 <= y2;
         end
@@ -201,7 +204,7 @@ module aes_core(input  logic         clk,
     //modules
 
     //KeyExpansion ke(key, clk, rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8, rk9, rk10); //can't calculate them all at once
-	roundKey rk(.inputKey(rk_in),.clk(clk), .nextKey(rk_out));
+    RoundKey rk(.inputKey(rk_in), .rcon(rcon), .clk(clk), .nextKey(rk_out)); //TODO: rcon might not work out for u queen
     SubBytes sb(.a(a0), .clk(clk), .y(y0));
     ShiftRows sr(.a(a1), .clk(clk), .y(y1));
     mixcolumns mc(.a(a2), .y(y2));
@@ -345,18 +348,6 @@ module SubBytes(input logic [127:0] a,
 
 endmodule
 
-
-//   The key and message are 128-bit values packed into an array of 16 bytes as
-//   shown below
-//        [127:120] [95:88] [63:56] [31:24]     S0,0    S0,1    S0,2    S0,3
-//        [119:112] [87:80] [55:48] [23:16]     S1,0    S1,1    S1,2    S1,3
-//        [111:104] [79:72] [47:40] [15:8]      S2,0    S2,1    S2,2    S2,3
-//        [103:96]  [71:64] [39:32] [7:0]       S3,0    S3,1    S3,2    S3,3
-//
-//   Equivalently, the values are packed into four words as given
-//        [127:96]  [95:64] [63:32] [31:0]      w[0]    w[1]    w[2]    w[3]
-/////////////////////////////////////////////
-
 module ShiftRows(input logic [127:0] a,
                 input logic clk,
                 output logic [127:0] y);
@@ -365,8 +356,10 @@ module ShiftRows(input logic [127:0] a,
   // move front byte at row 1 to the back 1 times
   // so on for rows 2 and 3
   // row 0: b0, b4, b8, b12 (as is)
-  assign y[127:0] = a[127:0];
-  assign y[96:88] = a[96:88];
+  logic [7:0] b0, b1, b2, b3, b4, b5, b6, b7, b8;
+  logic [7:0] b9, b10, b11, b12, b13, b14, b15;
+  assign y[127:120] = a[127:120];
+  assign y[95:88] = a[95:88];
   assign y[63:56] = a[63:56];
   assign y[31:24] = a[31:24]; 
 
@@ -417,30 +410,11 @@ module AddRoundKey(input logic [127:0] key, roundKey,
   assign y = key ^ roundKey; 
 endmodule
 
-//Key Schedule
-/*
-module KeyExpansion(input logic [127:0] key,
-                    input logic clk,
-                    output logic [127:0] rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8, rk9, rk10);
 
-  //expand to 10 round keys
-  roundKey round1(key, clk, rk1);
-  roundKey round2(rk1, clk, rk2);
-  roundKey round3(rk2, clk, rk3);
-  roundKey round4(rk3, clk, rk4);
-  roundKey round5(rk4, clk, rk5);
-  roundKey round6(rk5, clk, rk6);
-  roundKey round7(rk6, clk, rk7);
-  roundKey round8(rk7, clk, rk8);
-  roundKey round9(rk8, clk, rk9);
-  roundKey round10(rk9, clk, rk10); 
-
-endmodule
-*/
 
 //determines the next round key given a past round key/matrix
-module roundKey(input logic [127:0] inputKey,
-				input logic [7:0] rcon, 
+module RoundKey(input logic [127:0] inputKey,
+		input logic [7:0] rcon, 
                 input logic clk,
                 output logic [127:0] nextKey);
     //unpack input key:
@@ -452,40 +426,17 @@ module roundKey(input logic [127:0] inputKey,
 
   //setup output key logic
   logic [31:0] outCol0, outCol1, outCol2, outCol3;
+  logic [31:0] oc0i; //out column 0 intermediate
 
   // calculate column 4
   logic [31:0] sbrc; //SubByteRotatedColumn
-  RotWord oc0(col3, clk, outCol0); //rotate column 3 from input key
-  subBytesColumn sbc(outCol0, clk, sbrc); // subBytes on the rotated col
+  RotWord oc0(col3, clk, oc0i); //rotate column 3 from input key
+  subBytesColumn sbc(oc0i, clk, sbrc); // subBytes on the rotated col
   
   // subBytes(RotColumn) + RConCol1 + col0
   // add every thing individually
-  assign outCol0[7:0] = sbrc[7:0] + rcon + col0[7:0]; //TODO: this only works for the first roundKey
-  assign outCol0[15:8] = sbrc[15:8] + col0[15:8];
-  assign outCol0[23:16] = sbrc[23:16] + col0[23:16];
-  assign outCol0[31:24] = sbrc[31:24] + col0[31:24];
-
-  // for Wi, add Wi-1 + Wi-4 for the rest of the words
-
-  // col5/outCol1 = col4/outCol0 + col1
-  /*
-  assign outCol1[7:0] = outCol0[7:0] + col1[7:0];
-  assign outCol1[15:8] = outCol0[15:8] + col1[15:8];
-  assign outCol1[23:16] = outCol0[23:16] + col1[23:16];
-  assign outCol1[31:24] = outCol0[31:24] + col1[31:24];
-
-  //col6/outCol2 = col5/outCol1 + col2
-  assign outCol2[7:0] = outCol1[7:0] + col2[7:0];
-  assign outCol2[15:8] = outCol1[15:8] + col2[15:8];
-  assign outCol2[23:16] = outCol1[23:16] + col2[23:16];
-  assign outCol2[31:24] = outCol1[31:24] + col2[31:24];
-
-  //col7/outCol3 = col6/outCol2 + col3
-  assign outCol3[7:0] = outCol2[7:0] + col3[7:0];
-  assign outCol3[15:8] = outCol2[15:8] + col3[15:8];
-  assign outCol3[23:16] = outCol2[23:16] + col3[23:16];
-  assign outCol3[31:24] = outCol2[31:24] + col3[31:24];
-  */
+  assign outCol0[7:0] = sbrc[7:0] ^ rcon ^ col0[7:0]; //TODO: this only works for the first roundKey
+  assign outCol0[31:8] = sbrc[31:8] ^ col0[31:8];
   
   assign outCol1 = outCol0 ^ col1;
   assign outCol2 = outCol1 ^ col2;
@@ -528,34 +479,29 @@ endmodule
 // 01 02 04 08 10 20 40 80 1b 36
 //then hella 0s
 
-/*
-////////////////////////////
-///////// old work /////////
-////////////////////////////
- from shiftRows:
-  y[7:0] = a[7:0];
-  y[39:32] = a[39:32];
-  y[71:64] = a[71:64];
-  y[103:96] = a[103:96]; //TODO: correct all this based on original key (see top of aes_core)
+//////////// OLD CODE //////////////////////
 
-  // row 1: b1, b5, b9. b13
-  // should be: b5, b9, b13, b1
-  y[15:8] = a[47:40];
-  y[47:40] = a[79:72];
-  y[79:72] = a[111:104];
-  y[111:104] = a[15:8]; 
-  
-  // row 2: b2, b6, b10, b14
-  // should be: b10, b14, b2, b6
-  y[23:16] = a[87:80];
-  y[55:48] = a[119:112];
-  y[87:80] = a[23:16];
-  y[119:112] = a[55:48];
+// from RoundKey module
 
-  // row 3: b3, b7, b11, b15
-  // should be: b15, b3, b7, b11
-  y[31:24] = a[127:120];
-  y[63:56] = a[31:24];
-  y[95:88] = a[63:56];
-  y[127:120] = a[95:88];
-*/
+  /*
+  assign outCol0[15:8] = sbrc[15:8] + col0[15:8];
+  assign outCol0[23:16] = sbrc[23:16] + col0[23:16];
+  assign outCol0[31:24] = sbrc[31:24] + col0[31:24];
+  */
+  // col5/outCol1 = col4/outCol0 + col1
+  /*
+  assign outCol1[7:0] = outCol0[7:0] + col1[7:0];
+  assign outCol1[15:8] = outCol0[15:8] + col1[15:8];
+  assign outCol1[23:16] = outCol0[23:16] + col1[23:16];
+  assign outCol1[31:24] = outCol0[31:24] + col1[31:24];
+  //col6/outCol2 = col5/outCol1 + col2
+  assign outCol2[7:0] = outCol1[7:0] + col2[7:0];
+  assign outCol2[15:8] = outCol1[15:8] + col2[15:8];
+  assign outCol2[23:16] = outCol1[23:16] + col2[23:16];
+  assign outCol2[31:24] = outCol1[31:24] + col2[31:24];
+  //col7/outCol3 = col6/outCol2 + col3
+  assign outCol3[7:0] = outCol2[7:0] + col3[7:0];
+  assign outCol3[15:8] = outCol2[15:8] + col3[15:8];
+  assign outCol3[23:16] = outCol2[23:16] + col3[23:16];
+  assign outCol3[31:24] = outCol2[31:24] + col3[31:24];
+  */

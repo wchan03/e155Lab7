@@ -346,33 +346,26 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(228): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(230): </Dynamic>
             <Dynamic>sbox</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>228</Navigation>
+            <Navigation>230</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(233): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): </Dynamic>
             <Dynamic>sbox</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>233</Navigation>
+            <Navigation>235</Navigation>
         </Message>
         <Message>
             <ID>35931038</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(233): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): </Dynamic>
             <Dynamic>sbox_original_ramnet</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>233</Navigation>
-        </Message>
-    </Task>
-    <Task name="Export">
-        <Message>
-            <ID>1081100</ID>
-            <Severity>1</Severity>
-            <Dynamic>Bitstream authenticated.</Dynamic>
+            <Navigation>235</Navigation>
         </Message>
     </Task>
 </BaliMessageLog>

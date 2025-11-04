@@ -1,0 +1,10 @@
+#Start recording tcl command: 11/3/2025 19:13:27
+#Project Location: C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc; Project name: lab7_wc
+prj_open "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/lab7_wc.rdf"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 11/3/2025 21:08:35

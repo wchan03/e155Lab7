@@ -1,0 +1,33 @@
+#Start recording tcl command: 11/3/2025 13:38:32
+#Project Location: C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc; Project name: lab7_wc
+prj_create -name "lab7_wc" -impl "impl_1" -dev iCE40UP5K-SG48I -performance "High-Performance_1.2V" -synthesis "lse"
+prj_add_source "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv"
+prj_save 
+prj_disable_source "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv"
+prj_disable_source "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv"
+prj_disable_source "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv" "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv"
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Export -impl impl_1
+#Stop recording: 11/3/2025 15:55:10

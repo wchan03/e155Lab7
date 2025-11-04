@@ -5,7 +5,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov  3 14:47:04 2025
+Mon Nov  3 20:50:32 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1_lattice.synproj -logfile lab7_wc_impl_1_lattice.srp -gui -msgset C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/promote.xml 
@@ -175,12 +175,12 @@ WARNING <35001200> - synthesis: Setting sbox as the top-level module. To specify
 INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1". VHDL-1504
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): sbox
-INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(228): compiling module sbox. VERI-1018
-WARNING <35931002> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(233): net sbox does not have a driver. VDB-1002
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(230): compiling module sbox. VERI-1018
+WARNING <35931002> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): net sbox does not have a driver. VDB-1002
 [Parameter Setting Section Start]
 
 [Parameter Setting Section End]
-WARNING <35931038> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(233): ram sbox_original_ramnet has no write-port on it. VDB-1038
+WARNING <35931038> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): ram sbox_original_ramnet has no write-port on it. VDB-1038
 
 
 
@@ -222,7 +222,7 @@ Constraint Summary:
 Peak Memory Usage: 101 MB
 
 --------------------------------------------------------------
-Total CPU Time: 6 secs 
+Total CPU Time: 5 secs 
 Total REAL Time: 12 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: e21cbc80c90d88aa9adaaba2b18bf09029b739fb
+Checksum -- synthesis -- netlist: e5e50a361fb3e4064a2b22c28df57ffe3ebaaa5e

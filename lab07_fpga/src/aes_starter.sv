@@ -108,22 +108,27 @@ module aes_core(input  logic         clk,
         idle: begin//reset state
 			nextstate = ARK0;
         end
-        ARK0: begin
+        ARK0: nextstate = ARK0Delay;
+        ARK0Delay: begin
           nextstate = SB1;
         end
-        SB1: begin
+        SB1: nextstate = SB1Delay;
+        SB1Delay: begin
           nextstate = SB1Delay;
         end
         SB1Delay: begin
           nextstate = SR1;
         end
-        SR1: begin
+        SR1: nextstate = SR1Delay;
+        SR1Delay: begin
           nextstate = MC1;
         end
-        MC1: begin
+        MC1: nextstate = MC1Delay;
+        MC1Delay: begin
           nextstate = ARK1;
         end
-        ARK1: begin
+        ARK1: nextstate = ARK1Delay;
+        ARK1Delay: begin
           if(counter < 10) nextstate = SB1; //loop if less than 10 rounds
           else nextstate = SB2; //move onto final round
         end
@@ -133,10 +138,12 @@ module aes_core(input  logic         clk,
         SB2Delay: begin
           nextstate = SR2;
         end
-        SR2: begin
+        SR2: nextstate = SR2Delay;
+        SR2Delay: begin
           nextstate = ARK2;
         end
-        ARK2: begin
+        ARK2: nextstate = ARK2Delay;
+        ARK2Delay: begin
           nextstate = finished;
         end
         finished: begin
@@ -154,8 +161,9 @@ module aes_core(input  logic         clk,
         end
         ARK0: begin
           counter <= counter + 1;
-		  rk_in <= key; //initial roundKey calculated with input key
+		      rk_in <= key; //initial roundKey calculated with input key
           roundKey <= rk_out;
+          //TODO: does this have to happen in a different state? 
           a3 <= key; //assign input into AddRoundKey
         end
         SB1: begin

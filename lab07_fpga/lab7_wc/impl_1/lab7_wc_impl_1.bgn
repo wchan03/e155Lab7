@@ -4,7 +4,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov  3 20:51:16 2025
+Tue Nov  4 14:48:50 2025
 
 
 Command: bitgen -w -gui -msgset C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/promote.xml -freq 0 lab7_wc_impl_1.udb C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1 

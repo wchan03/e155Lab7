@@ -48,14 +48,13 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Nov  3 20:50:32 2025
+Tue Nov  4 14:48:04 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1_lattice.synproj -logfile lab7_wc_impl_1_lattice.srp -gui -msgset C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/promote.xml 
 
 INFO <35002000> - synthesis: Lattice Synthesis Engine launched.
 
-The -top option is not used.
 Synthesis options:
 The -a option is iCE40UP.
 The -t option is SG48.
@@ -95,7 +94,7 @@ Resolving user-selected strategy settings...
 ----------------------------------------------------------------
 Optimization Goal     | Area
 ----------------------------------------------------------------
-Top-level Module Name | 
+Top-level Module Name | sbox
 ----------------------------------------------------------------
 Target Frequency      | 200.000 MHz
 ----------------------------------------------------------------
@@ -156,7 +155,6 @@ Output HDL filename: lab7_wc_impl_1.vm
 -path C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1 (searchpath added)
 -path C:/lscc/radiant/2024.2/ispfpga/ice40tp/data (searchpath added)
 Mixed language design
-CRITICAL <35001476> - synthesis: A top-level module has not been specified for the mixed language design.
 Verilog design file: C:/lscc/radiant/2024.2/ip/pmi/pmi_iCE40UP.v
 Verilog design file: C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
 VHDL library: pmi
@@ -214,19 +212,18 @@ Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd. VHDL-1481
 Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 
 INFO <35921014> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
-WARNING <35001200> - synthesis: Setting sbox as the top-level module. To specify the top-level module explicitly, go to View->Set Views->Hierarchy or Project->Active Implementation->Set Top-Level Unit.
 INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1". VHDL-1504
 Top module language type = Verilog.
 Top module name (Verilog, mixed language): sbox
-INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(230): compiling module sbox. VERI-1018
-WARNING <35931002> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): net sbox does not have a driver. VDB-1002
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(239): compiling module sbox. VERI-1018
+WARNING <35931002> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): net sbox does not have a driver. VDB-1002
 
 <A name="lse_parameter"></A><B><U><big>Parameter Setting</big></U></B>
 
 [Parameter Setting Section Start]
 
 [Parameter Setting Section End]
-WARNING <35931038> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): ram sbox_original_ramnet has no write-port on it. VDB-1038
+WARNING <35931038> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): ram sbox_original_ramnet has no write-port on it. VDB-1038
 
 
 
@@ -274,13 +271,13 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 101 MB
+Peak Memory Usage: 95 MB
 
 --------------------------------------------------------------
 Total CPU Time: 5 secs 
-Total REAL Time: 12 secs 
+Total REAL Time: 13 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: e5e50a361fb3e4064a2b22c28df57ffe3ebaaa5e
+Checksum -- synthesis -- netlist: 8642f9a639745d48ba47258b49396eadcdca0414
 
 
 

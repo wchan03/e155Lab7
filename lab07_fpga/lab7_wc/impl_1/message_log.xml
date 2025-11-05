@@ -2,10 +2,6 @@
 <BaliMessageLog>
     <Task name="Synthesis">
         <Message>
-            <ID>35001476</ID>
-            <Severity>256</Severity>
-        </Message>
-        <Message>
             <ID>35935050</ID>
             <Severity>16</Severity>
             <Dynamic>TRIM9</Dynamic>
@@ -333,11 +329,6 @@
             <Navigation>4</Navigation>
         </Message>
         <Message>
-            <ID>35001200</ID>
-            <Severity>16</Severity>
-            <Dynamic>sbox</Dynamic>
-        </Message>
-        <Message>
             <ID>35921504</ID>
             <Severity>1</Severity>
             <Dynamic></Dynamic>
@@ -346,26 +337,26 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(230): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(239): </Dynamic>
             <Dynamic>sbox</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>230</Navigation>
+            <Navigation>239</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): </Dynamic>
             <Dynamic>sbox</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>235</Navigation>
+            <Navigation>244</Navigation>
         </Message>
         <Message>
             <ID>35931038</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(235): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): </Dynamic>
             <Dynamic>sbox_original_ramnet</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>235</Navigation>
+            <Navigation>244</Navigation>
         </Message>
     </Task>
 </BaliMessageLog>

@@ -1,8 +1,50 @@
 m255
 K4
 z2
-!s12c _opt
-Z0 !s99 nomlopt
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+!s12c _opt2
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+R2
+R1
 !s11f vlog 2024.2 2024.05, May 20 2024
 13
 !s112 1.1
@@ -10,527 +52,559 @@ Z0 !s99 nomlopt
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc
+Z3 dC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc
 T_opt
-!s110 1762232485
-V186>1^EkK7VjM3GW<HJ=C1
+!s110 1762301415
+VYJoAH>G50B8Ub4UPm1oCi1
+04 8 4 work RoundKey fast 0
+04 22 4 work testbench_keyExpansion fast 0
+=8-00be43e604b8-690a95e6-340-96e0
+R1
+!s12f OEM25U13 
+Z4 !s12b OEM100
+Z5 !s124 OEM100
+Z6 !s135 nogc
+Z7 o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2024.2;79
+R3
+T_opt1
+!s110 1762306711
+V=[cLoGT5BmQVPO1[:bEZ_1
 04 8 4 work aes_core fast 0
 04 18 4 work testbench_aes_core fast 0
-=1-00be43eaec33-690988a5-5a-34a0
-R0
+=13-00be43e604b8-690aaa97-1eb-ad44
+R1
 !s12f OEM25U91 
-!s12b OEM100
-!s124 OEM100
-!s135 nogc
-o-quiet -auto_acc_if_foreign -work work -L iCE40UP +acc
-Z1 tCvgOpt 0
-n@_opt
-OL;O;2024.2;79
+R4
+R5
+R6
+R7
+R8
+n@_opt1
+R9
+T_opt2
+!s110 1762298839
+VAQ>N3cXO2UL>[9_T;Zf4h1
+04 9 4 work ShiftRows fast 0
+04 19 4 work testbench_shiftRows fast 0
+=1-00be43e604b8-690a8bd6-328-4b44
+R1
+!s12f OEM25U3 
+R4
+R5
+R6
+R7
+R8
+n@_opt2
+R9
+R3
 vAddRoundKey
-Z2 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z4 !s110 1762232464
+Z10 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
+Z11 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z12 !s110 1762306707
 !i10b 1
-!s100 b8zcn9VdP5ZCaJ17VW3L30
-I=4;6h]IFaKBaQVj=B[g@`0
+!s100 A5HDCgb=9m?]hgQ6bMWBT2
+Iz:5IVK8EBW2BXBEWkX3Im0
 S1
-Z5 dC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/testing_sim
-Z6 w1762232167
-Z7 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
-Z8 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
-!i122 4
-L0 390 22
-Z9 VDg1SIo80bB@j0V0VzS_@n1
-Z10 OL;L;2024.2;79
+Z13 dC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/testing_sim
+Z14 w1762306697
+Z15 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
+Z16 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
+!i122 35
+L0 405 5
+Z17 VDg1SIo80bB@j0V0VzS_@n1
+Z18 OL;L;2024.2;79
 r1
 !s85 0
 31
-Z11 !s108 1762232464.000000
-Z12 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv|
-Z13 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv|
+Z19 !s108 1762306706.000000
+Z20 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv|
+Z21 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv|
 !i113 0
-Z14 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+Z22 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
 n@add@round@key
 vaes
-R2
-R3
-R4
-!i10b 1
-!s100 L6acinb=hk1C<LjM@oR4V2
-I;OecUE3LBiMdYFZP=b6CA1
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 6 12
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 NgTaJP5hMOF5c>S^KVhoZ2
+Izbn8J::nBdk>`;2n3GKmN2
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 10 12
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vaes_core
-R2
-R3
-R4
-!i10b 1
-!s100 V[EM5oKh:cfo75G1T2Aoh3
-I3_gX0ZV;]@z][k:RHPP`o2
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 75 148
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 D]7b8b^c0U5?;I;AMHMhR1
+IeSg;6Y5H8YG:Sm<MKNEzo1
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 79 159
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vaes_spi
-R2
-R3
-R4
-!i10b 1
-!s100 <Li9?55zzR@I>CcR;93nH1
-I[Oc<ZSm0KaC;e:oHnW@k;3
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 26 29
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 TYB]]5cQ]1bgCc4SoI?G]0
+IXLJ6m6dPP2oNL<TfHnajX0
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 30 29
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vgaloismult
-R2
-R3
-R4
-!i10b 1
-!s100 o`zEG[m[i1?oA=V408OR;1
-I=6lGbd75:a1A31Wocc6EB2
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 315 8
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 :1]K[ZY63;2M>nOGz691g2
+I0n4l@bdLR6VYXmB0ATW4z1
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 330 8
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vmixcolumn
-R2
-R3
-R4
-!i10b 1
-!s100 J]kd1=?R:6PHKYz>iic<G3
-I1jKMn;kg65X?SaCf;8CFG1
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 288 19
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 1FJc1<Kg1c1N9]Xn=V7U03
+I@6Pjek7c?0Q2:=7W[VU4P3
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 303 19
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vmixcolumns
-R2
-R3
-R4
-!i10b 1
-!s100 FVXP9AT05>aN16I<Mckdb3
-I77k521nf8jz1kOBelUKRZ0
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 272 8
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 U;WP;bJXh2K_52Ujc?f7W1
+IS@AN7kfkgi=k@UP3n2D=^1
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 287 8
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vRotWord
-R2
-R3
-R4
-!i10b 1
-!s100 06nP9kA]mkNHo>9m6kekA2
-I@nFNbeif@gzzNUWJmL?ED2
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 451 9
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 k?KAb87XI?I_3<jS^9Qz;0
+I2M<Fj8L<0`17cWB2WTL[@0
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 447 9
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 n@rot@word
 vRoundKey
-R2
-R3
-R4
-!i10b 1
-!s100 b4QWQJ1TkGm`_zSAzf]WV0
-IzIg<Lhh?4WNoeTJc[5Pdc3
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 416 34
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 A71Ef3elVVCD7XbaiUQ_51
+IJ5bK6kCnlXdD[8ViBbf`Q3
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 412 34
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 n@round@key
 vsbox
-R2
-R3
-R4
-!i10b 1
-!s100 OWE2Yn57`Jng@E@:k7>@L2
-IO]c?Z2CmP:E1X45=AI4H>2
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 231 10
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 m?4kXXAnNfEgWUH@<9ZVM1
+I1H0IIgHLP1AGQoDCQh5d:1
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 246 10
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vsbox_sync
-R2
-R3
-R4
-!i10b 1
-!s100 kCJ7blfb<Xd]U6B6ZEe>60
-IM2DTnJebGhnOC7Hij9Dc:3
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 248 16
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 O^>Q@_4Z]Q3N^SbfCOOg>0
+IMg@7Nn_YN2oRM4C^5Ag1m0
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 263 16
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 vShiftRows
-R2
-R3
-R4
-!i10b 1
-!s100 36X6U_JFX3Yi5YT@[0lEC0
-Ih;LJI:Y[MhJbAm<n@LiRd3
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 351 37
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 HN>mo1T@@=8<<>:BNA=L50
+I5XVSYRAUoKPa<^DQIGiAY1
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 366 37
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 n@shift@rows
 vSubBytes
-R2
-R3
-R4
-!i10b 1
-!s100 [5Q:ea]_LcUH:5<`^Y]9Y2
-IRPabTPZ^ebFBg1?hi[AN^0
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 328 22
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 2Gd:?F69Ig20MW]6BHgUM0
+I^iNJjzHKQGL_icA;mAo>[1
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 343 22
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 n@sub@bytes
 vsubBytesColumn
-R2
-R3
-R4
-!i10b 1
-!s100 e1Tgm<=R3XMfhZI=UJEK]1
-I@gdiFaaUIb37bcY^d8;lJ1
-S1
-R5
-R6
-R7
-R8
-!i122 4
-L0 461 8
-R9
 R10
+R11
+R12
+!i10b 1
+!s100 ]<gW2j9CbfG59VGcESz?B3
+IbbT]aAlOmAzOj<64I9flF0
+S1
+R13
+R14
+R15
+R16
+!i122 35
+L0 457 8
+R17
+R18
 r1
 !s85 0
 31
-R11
-R12
-R13
+R19
+R20
+R21
 !i113 0
-R14
-R1
+R22
+R8
 nsub@bytes@column
 vtestbench_addroundkey
 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv
-R3
-R4
+R11
+!s110 1762299252
 !i10b 1
-!s100 XAD11Bao:jDTW6Fo?5ha<3
-IgcWJf>gIBCYl;jhGGPAFA1
+!s100 nb^NSK?Nd>Qh5YYRInnAV3
+I=A70U5SFjEHea]`9?gPcA3
 S1
-R5
-w1762211155
+R13
+w1762298523
 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv
 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv
-!i122 0
-L0 8 57
-R9
-R10
+!i122 14
+L0 8 65
+R17
+R18
 r1
 !s85 0
 31
-R11
+Z23 !s108 1762299252.000000
 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/addroundkey_tb.sv|
 !i113 0
-R14
-R1
+R22
+R8
 vtestbench_aes_core
 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv
-R3
-R4
+R11
+Z24 !s110 1762299253
 !i10b 1
 !s100 FIO7h3@d^kFng7_gbKhj30
 IeljLke9`T6=bdNRNg`]h=3
 S1
-R5
-Z15 w1762205196
+R13
+Z25 w1762295860
 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv
 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv
-!i122 1
+!i122 15
 L0 11 42
-R9
-R10
+R17
+R18
 r1
 !s85 0
 31
-R11
+R23
 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv|
 !i113 0
-R14
-R1
+R22
+R8
 vtestbench_aes_sbox
 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv
-R3
-R4
+R11
+R24
 !i10b 1
 !s100 E802:^hIgYbZd^<0leGNb3
 I^2O;9f?iFIHglaYUBG;O70
 S1
-R5
-R15
+R13
+R25
 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv
 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv
-!i122 2
+!i122 16
 L0 7 67
-R9
-R10
+R17
+R18
 r1
 !s85 0
 31
-R11
+Z26 !s108 1762299253.000000
 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_sbox_tb.sv|
 !i113 0
-R14
-R1
+R22
+R8
 vtestbench_aes_spi
 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv
-R3
-R4
+R11
+R24
 !i10b 1
 !s100 ECM4U[SG6oCU]XGW;T?IF2
 IAe_PRje?_:_khjG9VF[NU1
 S1
-R5
-R15
+R13
+R25
 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv
 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv
-!i122 3
+!i122 17
 L0 8 73
-R9
-R10
+R17
+R18
 r1
 !s85 0
 31
-R11
+R26
 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv|
 !i113 0
-R14
-R1
+R22
+R8
 vtestbench_keyExpansion
 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv
-R3
-R4
+R11
+!s110 1762300674
 !i10b 1
-!s100 mXXIJ:D0Q^STb7;E1<BHH1
-IjkHB]T>80k6cG_jkzPRUT3
+!s100 NXCiO6^04C[]<<_NZO`Ne1
+In:cgGB0;H4BC4d4WB1mb_1
 S1
-R5
-w1762214063
+R13
+w1762300663
 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv
 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv
-!i122 5
-L0 8 166
-R9
-R10
+!i122 23
+L0 8 179
+R17
+R18
 r1
 !s85 0
 31
-R11
+!s108 1762300674.000000
 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/keyexpansion_tb.sv|
 !i113 0
-R14
-R1
+R22
+R8
 ntestbench_key@expansion
 vtestbench_shiftRows
 2C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv
-R3
-R4
+R11
+R24
 !i10b 1
-!s100 KHh^GP>`GEIGQ_;hD9>?G3
-IedVbb5:GlYzlIQFXU<TE61
+!s100 :i>8M?cC6^8ciEgglMT9j3
+Ig8fC4UOJ8C]8SmDWmfe8Q2
 S1
-R5
-w1762212350
+R13
+w1762298817
 8C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv
 FC:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv
-!i122 6
+!i122 20
 L0 8 39
-R9
-R10
+R17
+R18
 r1
 !s85 0
 31
-R11
+R26
 !s107 C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/shiftrows_tb.sv|
 !i113 0
-R14
-R1
+R22
+R8
 ntestbench_shift@rows

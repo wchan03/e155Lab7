@@ -1,3 +1,7 @@
+// Wava Chan
+// wchan@g.hmc.edu
+// Nov. 2025
+// edited started code provided by E155
 /////////////////////////////////////////////
 // aes
 //   Top level module with SPI interface and SPI core
@@ -79,16 +83,11 @@ module aes_core(input  logic         clk,
                 output logic         done, 
                 output logic [127:0] cyphertext);
 
-    // TODO: Your code goes here
     //set up intermediate logic
-    //logic [127:0] rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8, rk9, rk10, roundKey;
-	logic [127:0] rk_in, rk_out, roundKey;
-   //logic [1270:0] allRoundKeys = {rk1, rk2, rk3, rk4, rk5, rk6, rk7, rk8, rk9, rk10}; //TODO: double check this sizing works out
-    int index1 = 127, index2 = 0; 
-    int counter = 10;
-	logic [7:0] rcon = 8'h01; 
-
+    logic [127:0] rk_in, rk_out, roundKey;
+	  logic [7:0] rcon = 8'h01; 
     logic [127:0] temptext, y0, y1, y2, y3, a0, a1, a2, a3;
+    int counter;
 
 
 
@@ -106,16 +105,13 @@ module aes_core(input  logic         clk,
     always_comb begin
       case(state)
         idle: begin//reset state
-			nextstate = ARK0;
+			  nextstate = ARK0;
         end
         ARK0: nextstate = ARK0Delay;
         ARK0Delay: begin
           nextstate = SB1;
         end
         SB1: nextstate = SB1Delay;
-        SB1Delay: begin
-          nextstate = SB1Delay;
-        end
         SB1Delay: begin
           nextstate = SR1;
         end
@@ -128,7 +124,7 @@ module aes_core(input  logic         clk,
           nextstate = ARK1;
         end
         ARK1: nextstate = ARK1Delay;
-        ARK1Delay: begin
+        ARK1Delay: begin //TODO unsure of this logic
           if(counter < 10) nextstate = SB1; //loop if less than 10 rounds
           else nextstate = SB2; //move onto final round
         end
@@ -157,17 +153,22 @@ module aes_core(input  logic         clk,
     always_ff@(posedge clk) begin
       case(state)
         idle: begin//reset state
-			counter <= 0;
+			    counter <= 0;
+          roundKey <= plaintext; //input to round 1 = plaintext + key
+          a3 <= key;
         end
         ARK0: begin
           counter <= counter + 1;
-		      rk_in <= key; //initial roundKey calculated with input key
-          roundKey <= rk_out;
-          //TODO: does this have to happen in a different state? 
-          a3 <= key; //assign input into AddRoundKey
+		      //rk_in <= key; //initial roundKey calculated with input key
+          //roundKey <= rk_out;
+          //a3 <= key; //assign input into AddRoundKey
+        end
+        ARK0Delay: begin
+          //a3 <= key;
+          //roundKey <= rk_out;
         end
         SB1: begin
-          a0 <= y3; //output of RoundKey -> input of SubBytes
+          a0 <= y3; //output of AddRoundKey -> input of SubBytes
         end
         SB1Delay: begin
         end
@@ -178,12 +179,18 @@ module aes_core(input  logic         clk,
           a2 <= y1; //output of ShiftRows -> input of mixcolumns
         end
         ARK1: begin
-          counter <= counter + 1;
-		  //TODO does this work??
-		  rcon <= rcon *2;
-		  rk_in <= roundKey; //old out should be new in 
-		  roundKey <= rk_out;
-          a3 <= y2; //output of mixcolumns -> input of RoundKey
+          counter <= counter + 1; //TODO should this happen before or after rcon calcs?
+          //rcon calculations
+          if(counter == 8) rcon <= 8'h1b;
+          //else if(counter == 10) rcon <= 8'h36;
+          else rcon <= rcon *2;
+          //calculate next round key
+          rk_in <= roundKey; //old out should be new in 
+          roundKey <= rk_out;
+          //a3 <= y2; //output of mixcolumns -> input of AddRoundKey
+        end
+        ARK1Delay: begin
+          a3 <= y2; //output of mixcolumns -> input of AddRoundKey
         end
         SB2: begin
           a0 <= y3; //output of RoundKey -> input of SubBytes
@@ -194,10 +201,10 @@ module aes_core(input  logic         clk,
           a2 <= y0;
         end
         ARK2: begin
-          rk_in <= roundKey; //final round key
-		  roundKey <= rk_out;
-	  rcon = 7'h36;
           counter <= counter + 1;
+          rk_in <= roundKey; //final round key
+		      roundKey <= rk_out;
+	        rcon = 7'h36;
           a3 <= y2;
         end
         finished: begin
@@ -216,7 +223,7 @@ module aes_core(input  logic         clk,
     SubBytes sb(.a(a0), .clk(clk), .y(y0));
     ShiftRows sr(.a(a1), .clk(clk), .y(y1));
     mixcolumns mc(.a(a2), .y(y2));
-	AddRoundKey ark(.key(a3), .roundKey(roundKey), .clk(clk), .y(y3));
+	  AddRoundKey ark(.key(a3), .roundKey(roundKey), .clk(clk), .y(y3));
 
     //assert done, assign cyphertext
     assign done = (state == finished);
@@ -398,39 +405,20 @@ endmodule
 module AddRoundKey(input logic [127:0] key, roundKey,
                    input logic clk,
                    output logic [127:0] y);
-  /*
-  y[7:0] = key[7:0] + roundKey[7:0];
-  y[15:8] = key[15:8] + roundKey[15:8]; //TODO noway this is the most efficient way
-  y[31:16] = key[31:16] + roundKey[31:16];
-  y[39:32] = key[39:32] + roundKey[39:32];
-  y[47:40] = key[47:40] + roundKey[47:40];
-  y[55:48] = key[55:48] + roundKey[55:48];
-  y[63:56] = key[63:56] + roundKey[63:56];
-  y[71:64] = key[71:64] + roundKey[71:64];
-  y[79:72] = key[79:72] + roundKey[79:72];
-  y[87:80] = key[87:80] + roundKey[87:80];
-  y[95:88] = key[95:88] + roundKey[95:88];
-  y[103:96] = key[103:96] + roundKey[103:96]; 
-  y[111:104] = key[111:104] + roundKey[111:104];
-  y[119:112] = key[119:112] + roundKey[119:112];
-  y[127:120] = key[127:120] + roundKey[127:120];
-  */
   assign y = key ^ roundKey; 
 endmodule
 
 
-
-//determines the next round key given a past round key/matrix
 module RoundKey(input logic [127:0] inputKey,
-		input logic [7:0] rcon, 
+		            input logic [7:0] rcon, 
                 input logic clk,
                 output logic [127:0] nextKey);
-    //unpack input key:
+  //unpack input key:
   logic [31:0] col0, col1, col2, col3;
-  assign col0 = inputKey[31:0];
-  assign col1 = inputKey[63:32];
-  assign col2 = inputKey[95:64];
-  assign col3 = inputKey[127:96];
+  assign col3 = inputKey[31:0];
+  assign col2 = inputKey[63:32];
+  assign col1 = inputKey[95:64];
+  assign col0 = inputKey[127:96];
 
   //setup output key logic
   logic [31:0] outCol0, outCol1, outCol2, outCol3;
@@ -440,11 +428,11 @@ module RoundKey(input logic [127:0] inputKey,
   logic [31:0] sbrc; //SubByteRotatedColumn
   RotWord oc0(col3, clk, oc0i); //rotate column 3 from input key
   subBytesColumn sbc(oc0i, clk, sbrc); // subBytes on the rotated col
-  
+
   // subBytes(RotColumn) + RConCol1 + col0
   // add every thing individually
-  assign outCol0[7:0] = sbrc[7:0] ^ rcon ^ col0[7:0]; //TODO: this only works for the first roundKey
-  assign outCol0[31:8] = sbrc[31:8] ^ col0[31:8];
+  assign outCol0[31:24] = sbrc[31:24] ^ rcon ^ col0[31:24]; //TODO: this only works for the first roundKey
+  assign outCol0[23:0] = sbrc[23:0] ^ col0[23:0];
   
   assign outCol1 = outCol0 ^ col1;
   assign outCol2 = outCol1 ^ col2;
@@ -460,10 +448,10 @@ module RotWord(input logic [31:0] a,
               input logic clk,
               output logic [31:0] y);
   //move top of column to bottom
-  assign y[7:0] = a[15:8];
-  assign y[15:8] = a[23:16];
-  assign y[23:16] = a[31:24];
-  assign y[31:24] = a[7:0];
+  assign y[7:0] = a[31:24];
+  assign y[15:8] = a[7:0];
+  assign y[23:16] = a[15:8];
+  assign y[31:24] = a[23:16];
 endmodule
 
 module subBytesColumn(input logic [31:0] a,
@@ -474,42 +462,3 @@ module subBytesColumn(input logic [31:0] a,
   sbox_sync b2(a[23:16], clk, y[23:16]);
   sbox_sync b3(a[31:24], clk, y[31:24]);
 endmodule
-
-// helpful key:
-
-// initial message or 4x4 byte grid
-//   b0[7:0] b4[39:32] b8[71:64]  b12[103:96]
-//  b1[15:8] b5[47:40] b9[79:72]  b13[111:104]
-// b2[23:16] b6[55:48] b10[87:80] b14[119:112]
-// b3[31:24] b7[63:56] b11[95:88] b15[127:120]
-
-//rcon
-// 01 02 04 08 10 20 40 80 1b 36
-//then hella 0s
-
-//////////// OLD CODE //////////////////////
-
-// from RoundKey module
-
-  /*
-  assign outCol0[15:8] = sbrc[15:8] + col0[15:8];
-  assign outCol0[23:16] = sbrc[23:16] + col0[23:16];
-  assign outCol0[31:24] = sbrc[31:24] + col0[31:24];
-  */
-  // col5/outCol1 = col4/outCol0 + col1
-  /*
-  assign outCol1[7:0] = outCol0[7:0] + col1[7:0];
-  assign outCol1[15:8] = outCol0[15:8] + col1[15:8];
-  assign outCol1[23:16] = outCol0[23:16] + col1[23:16];
-  assign outCol1[31:24] = outCol0[31:24] + col1[31:24];
-  //col6/outCol2 = col5/outCol1 + col2
-  assign outCol2[7:0] = outCol1[7:0] + col2[7:0];
-  assign outCol2[15:8] = outCol1[15:8] + col2[15:8];
-  assign outCol2[23:16] = outCol1[23:16] + col2[23:16];
-  assign outCol2[31:24] = outCol1[31:24] + col2[31:24];
-  //col7/outCol3 = col6/outCol2 + col3
-  assign outCol3[7:0] = outCol2[7:0] + col3[7:0];
-  assign outCol3[15:8] = outCol2[15:8] + col3[15:8];
-  assign outCol3[23:16] = outCol2[23:16] + col3[23:16];
-  assign outCol3[31:24] = outCol2[31:24] + col3[31:24];
-  */

@@ -1,6 +1,6 @@
                          Lattice PAR Report File
 Radiant Software (64-bit) 2024.2.0.3.0
-Mon Nov  3 20:51:02 2025
+Tue Nov  4 14:48:35 2025
 
 Command Line: par -w -n 1 -t 1 -s 1 -cores 1 -hsp m -exp parPathBased=ON \
 	lab7_wc_impl_1_map.udb lab7_wc_impl_1.udb 

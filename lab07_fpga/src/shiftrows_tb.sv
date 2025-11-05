@@ -11,7 +11,7 @@ module testbench_shiftRows();
     logic [127:0] a, y, y_exp; 
 
     //instantiate dut
-    ShiftRows dut(.key(a), .clk(clk), .y(y));
+    ShiftRows dut(.a(a), .clk(clk), .y(y));
 
     always
         begin

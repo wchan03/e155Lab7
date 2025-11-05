@@ -185,12 +185,16 @@ module aes_core(input  logic         clk,
           //else if(counter == 10) rcon <= 8'h36;
           else rcon <= rcon *2;
           //calculate next round key
-          rk_in <= roundKey; //old out should be new in 
-          roundKey <= rk_out;
+          //rk_in <= roundKey; //old out should be new in 
+          //roundKey <= rk_out;
+          rk_in <= rk_out
           //a3 <= y2; //output of mixcolumns -> input of AddRoundKey
         end
+        //TODO: add extra delay state here
         ARK1Delay: begin
           a3 <= y2; //output of mixcolumns -> input of AddRoundKey
+          roundKey <= rk_out;
+          temptext <= y3; //TODO: necessary?
         end
         SB2: begin
           a0 <= y3; //output of RoundKey -> input of SubBytes

@@ -94,7 +94,7 @@ module aes_core(input  logic         clk,
     //set up FSM
     typedef enum logic [7:0] {idle, ARK0, ARK0Delay, SB1, SB1Delay, SR1, SR1Delay, MC1, MC1Delay, ARK1, ARK1Delay, ARK1Delay2, SB2, SB2Delay, SR2, SR2Delay, ARK2, ARK2Delay, ARK2Delay2, finished}
     statetype;
-      statetype state, nextstate; //TODO delay states for each state?
+      statetype state, nextstate; 
 	
 	//state register
     always_ff @(posedge clk) begin
@@ -125,7 +125,7 @@ module aes_core(input  logic         clk,
         end
         ARK1: nextstate = ARK1Delay;
         ARK1Delay: nextstate = ARK1Delay2; //need two states here because two things need to happen: RoundKey & AddRoundKey
-        ARK1Delay2: begin //TODO unsure of this logic
+        ARK1Delay2: begin 
           if(counter < 10) nextstate = SB1; //loop if less than 10 rounds
           else nextstate = SB2; //move onto final round
         end
@@ -161,13 +161,8 @@ module aes_core(input  logic         clk,
         end
         ARK0: begin
           counter <= counter + 1;
-		      //rk_in <= key; //initial roundKey calculated with input key
-          //roundKey <= rk_out;
-          //a3 <= key; //assign input into AddRoundKey
         end
         ARK0Delay: begin
-          //a3 <= key;
-          //roundKey <= rk_out;
         end
         SB1: begin
           a0 <= y3; //output of AddRoundKey -> input of SubBytes
@@ -181,7 +176,7 @@ module aes_core(input  logic         clk,
           a2 <= y1; //output of ShiftRows -> input of mixcolumns
         end
         ARK1: begin 
-          counter <= counter + 1; //TODO should this happen before or after rcon calcs?
+          counter <= counter + 1; 
           
           //rcon calculations
           if(counter == 9) rcon <= 8'h1b;
@@ -190,18 +185,12 @@ module aes_core(input  logic         clk,
 
           //calculate next round key
           rk_in <= roundKey; //old out should be new in 
-          //roundKey <= rk_out;
-
-          //rk_in <= rk_out;
-          //a3 <= y2; //output of mixcolumns -> input of AddRoundKey
         end
-        //TODO: add extra delay state here
         ARK1Delay: begin
         end
         ARK1Delay2: begin
           a3 <= y2; //output of mixcolumns -> input of AddRoundKey
           roundKey <= rk_out;
-          temptext <= y3; //TODO: necessary?
         end
         SB2: begin
           a0 <= y3; //output of RoundKey -> input of SubBytes
@@ -221,9 +210,6 @@ module aes_core(input  logic         clk,
 	        a3 <= y1; //Output of ShiftRows -> input of AddRoundKey
         end
         finished: begin
-           //done <= 1;
-           temptext <= y3; //output of AddRoundKey as our final text value
-           //TODO : assign cyphertext
         end
       endcase
 	 end
@@ -242,11 +228,7 @@ module aes_core(input  logic         clk,
     assign done = (state == finished);
     assign cyphertext = y3; 
 
-    /*
-    TODO: questions
-    1. do i need a delay state for every function?
-    2. how do i arrainge the variables?
-    */    
+  
 endmodule
 
 /////////////////////////////////////////////

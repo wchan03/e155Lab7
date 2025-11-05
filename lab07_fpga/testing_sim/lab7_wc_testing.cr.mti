@@ -12,6 +12,27 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 Top level modules:
 	testbench_addroundkey
 
+} {} {}} C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_starter.sv
+Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module aes
+-- Compiling module aes_spi
+-- Compiling module aes_core
+-- Compiling module sbox
+-- Compiling module sbox_sync
+-- Compiling module mixcolumns
+-- Compiling module mixcolumn
+-- Compiling module galoismult
+-- Compiling module SubBytes
+-- Compiling module ShiftRows
+-- Compiling module AddRoundKey
+-- Compiling module RoundKey
+-- Compiling module RotWord
+-- Compiling module subBytesColumn
+
+Top level modules:
+	aes
+	sbox
+
 } {} {}} C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_spi_tb.sv
 Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 -- Compiling module testbench_aes_spi
@@ -32,12 +53,5 @@ Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
 
 Top level modules:
 	testbench_shiftRows
-
-} {} {}} C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv
-Questa Lattice OEM Edition-64 vlog 2024.2 Compiler 2024.05 May 20 2024
--- Compiling module testbench_aes_core
-
-Top level modules:
-	testbench_aes_core
 
 } {} {}}

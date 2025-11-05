@@ -92,7 +92,7 @@ module aes_core(input  logic         clk,
 
 
     //set up FSM
-    typedef enum logic [7:0] {idle, ARK0, ARK0Delay, SB1, SB1Delay, SR1, SR1Delay, MC1, MC1Delay, ARK1, ARK1Delay, SB2, SB2Delay, SR2, SR2Delay, ARK2, ARK2Delay, finished}
+    typedef enum logic [7:0] {idle, ARK0, ARK0Delay, SB1, SB1Delay, SR1, SR1Delay, MC1, MC1Delay, ARK1, ARK1Delay, ARK1Delay2, SB2, SB2Delay, SR2, SR2Delay, ARK2, ARK2Delay, ARK2Delay2, finished}
     statetype;
       statetype state, nextstate; //TODO delay states for each state?
 	
@@ -124,7 +124,8 @@ module aes_core(input  logic         clk,
           nextstate = ARK1;
         end
         ARK1: nextstate = ARK1Delay;
-        ARK1Delay: begin //TODO unsure of this logic
+        ARK1Delay: nextstate = ARK1Delay2; //need two states here because two things need to happen: RoundKey & AddRoundKey
+        ARK1Delay2: begin //TODO unsure of this logic
           if(counter < 10) nextstate = SB1; //loop if less than 10 rounds
           else nextstate = SB2; //move onto final round
         end
@@ -139,12 +140,13 @@ module aes_core(input  logic         clk,
           nextstate = ARK2;
         end
         ARK2: nextstate = ARK2Delay;
-        ARK2Delay: begin
+        ARK2Delay: nextstate = ARK2Delay2;
+        ARK2Delay2: begin
           nextstate = finished;
         end
         finished: begin
-			nextstate = finished;
-		end
+			    nextstate = finished;
+		    end
         default: nextstate = idle;
       endcase
 	 end
@@ -154,8 +156,8 @@ module aes_core(input  logic         clk,
       case(state)
         idle: begin//reset state
 			    counter <= 0;
-          roundKey <= plaintext; //input to round 1 = plaintext + key
-          a3 <= key;
+          roundKey <= key; //input to round 1 = plaintext + key
+          a3 <= plaintext;
         end
         ARK0: begin
           counter <= counter + 1;
@@ -178,20 +180,25 @@ module aes_core(input  logic         clk,
         MC1: begin
           a2 <= y1; //output of ShiftRows -> input of mixcolumns
         end
-        ARK1: begin
+        ARK1: begin 
           counter <= counter + 1; //TODO should this happen before or after rcon calcs?
+          
           //rcon calculations
-          if(counter == 8) rcon <= 8'h1b;
-          //else if(counter == 10) rcon <= 8'h36;
+          if(counter == 9) rcon <= 8'h1b;
+          else if(counter == 1) rcon <= 8'h01;
           else rcon <= rcon *2;
+
           //calculate next round key
-          //rk_in <= roundKey; //old out should be new in 
+          rk_in <= roundKey; //old out should be new in 
           //roundKey <= rk_out;
-          rk_in <= rk_out
+
+          //rk_in <= rk_out;
           //a3 <= y2; //output of mixcolumns -> input of AddRoundKey
         end
         //TODO: add extra delay state here
         ARK1Delay: begin
+        end
+        ARK1Delay2: begin
           a3 <= y2; //output of mixcolumns -> input of AddRoundKey
           roundKey <= rk_out;
           temptext <= y3; //TODO: necessary?
@@ -202,14 +209,16 @@ module aes_core(input  logic         clk,
         SB2Delay: begin
         end
         SR2: begin
-          a2 <= y0;
+          a1 <= y0;
         end
         ARK2: begin
           counter <= counter + 1;
+          rcon = 7'h36;
           rk_in <= roundKey; //final round key
-		      roundKey <= rk_out;
-	        rcon = 7'h36;
-          a3 <= y2;
+        end
+        ARK2Delay2: begin
+          roundKey <= rk_out;
+	        a3 <= y1; //Output of ShiftRows -> input of AddRoundKey
         end
         finished: begin
            //done <= 1;
@@ -231,7 +240,7 @@ module aes_core(input  logic         clk,
 
     //assert done, assign cyphertext
     assign done = (state == finished);
-    assign cyphertext = temptext; 
+    assign cyphertext = y3; 
 
     /*
     TODO: questions
@@ -426,16 +435,16 @@ module RoundKey(input logic [127:0] inputKey,
 
   //setup output key logic
   logic [31:0] outCol0, outCol1, outCol2, outCol3;
-  logic [31:0] oc0i; //out column 0 intermediate
+  logic [31:0] rotCol; //out column 0 intermediate
 
   // calculate column 4
   logic [31:0] sbrc; //SubByteRotatedColumn
-  RotWord oc0(col3, clk, oc0i); //rotate column 3 from input key
-  subBytesColumn sbc(oc0i, clk, sbrc); // subBytes on the rotated col
+  RotWord oc0(col3, clk, rotCol); //rotate column 3 from input key
+  subBytesColumn sbc(rotCol, clk, sbrc); // subBytes on the rotated col
 
   // subBytes(RotColumn) + RConCol1 + col0
   // add every thing individually
-  assign outCol0[31:24] = sbrc[31:24] ^ rcon ^ col0[31:24]; //TODO: this only works for the first roundKey
+  assign outCol0[31:24] = sbrc[31:24] ^ rcon ^ col0[31:24];
   assign outCol0[23:0] = sbrc[23:0] ^ col0[23:0];
   
   assign outCol1 = outCol0 ^ col1;
@@ -443,7 +452,7 @@ module RoundKey(input logic [127:0] inputKey,
   assign outCol3 = outCol2 ^ col3;
 
   //get it all together
-  assign nextKey = {outCol0, outCol1, outCol2, outCol3}; //TODO: correct syntax?? will this work?
+  assign nextKey = {outCol0, outCol1, outCol2, outCol3};
 
 
 endmodule

@@ -9258,3 +9258,758 @@ run 5000
 # ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
 #    Time: 8350 ns  Iteration: 1  Instance: /testbench_aes_core
 # Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv failed with 1 errors.
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 8500
+# Error: cyphertext = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 8350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 8500
+# Error: cyphertext = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 8350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 8500
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 8500
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 8500
+run 500
+run 500
+# Error: cyphertext = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/temptext
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 95000
+# Error: cyphertext = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+run 85000
+# Error: cyphertext = ab1e60f7d94acebff839c4c21d1d58f1, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+# Compile of aes_starter.sv was successful.
+run 850000
+# Error: cyphertext = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+run 500
+# Error: cyphertext = ab1e60f7d94acebff839c4c21d1d58f1, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+run 850000
+# Error: cyphertext = ab1e60f7d94acebff839c4c21d1d58f1, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9450 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 850000
+# Error: cyphertext = 32a0839fe4e9f3e51d9e75121b030917, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/clk \
+sim:/testbench_aes_core/dut/load \
+sim:/testbench_aes_core/dut/key \
+sim:/testbench_aes_core/dut/plaintext \
+sim:/testbench_aes_core/dut/done \
+sim:/testbench_aes_core/dut/cyphertext
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/roundKey
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/rcon
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/y0 \
+sim:/testbench_aes_core/dut/y1 \
+sim:/testbench_aes_core/dut/y2 \
+sim:/testbench_aes_core/dut/y3
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/counter
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/rk_out
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/rk_in
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 10000
+# Error: cyphertext = 5b7580bd4e9b8786c10776468b476bf9, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 10000
+# Error: cyphertext = 71835cf09f45332dfe5d98ad1e96b0c5, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 10000
+run 500
+# Error: cyphertext = 1564d6c926071144ca57e55de726a75d, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 10150 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv failed with 3 errors.
+# Compile of aes_starter.sv failed with 6 errors.
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = 1564d6c926071144ca57e55de726a75d, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 10250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/rk/inputKey \
+sim:/testbench_aes_core/dut/rk/rcon \
+sim:/testbench_aes_core/dut/rk/clk \
+sim:/testbench_aes_core/dut/rk/nextKey
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = 1564d6c926071144ca57e55de726a75d, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 10250 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = 71835cf09f45332dfe5d98ad1e96b0c5, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+quit -sim
+# End time: 22:39:12 on Nov 04,2025, Elapsed time: 6:27:05
+# Errors: 0, Warnings: 2
+vsim -gui work.RoundKey work.testbench_keyExpansion -voptargs=+acc -L iCE40UP
+# vsim -gui work.RoundKey work.testbench_keyExpansion -voptargs="+acc" -L iCE40UP 
+# Start time: 22:39:28 on Nov 04,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.testbench_keyExpansion(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+add wave -position insertpoint  \
+sim:/testbench_keyExpansion/dut/inputKey \
+sim:/testbench_keyExpansion/dut/rcon \
+sim:/testbench_keyExpansion/dut/clk \
+sim:/testbench_keyExpansion/dut/nextKey
+run 500
+# round 1 key correct
+# round 2 key correct
+# round 3 key correct
+# round 4 key correct
+# round 5 key correct
+# round 6 key correct
+# round 7 key correct
+# round 8 key correct
+# round 9 key correct
+# round 10 key correct
+quit -sim
+# End time: 22:40:50 on Nov 04,2025, Elapsed time: 0:01:22
+# Errors: 0, Warnings: 2
+vsim -gui work.aes_core work.testbench_aes_core -voptargs=+acc -L iCE40UP
+# vsim -gui work.aes_core work.testbench_aes_core -voptargs="+acc" -L iCE40UP 
+# Start time: 22:41:17 on Nov 04,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = 71835cf09f45332dfe5d98ad1e96b0c5, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = ea835cf00445332d655d98ad8596b0c5, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/clk \
+sim:/testbench_aes_core/dut/load \
+sim:/testbench_aes_core/dut/key \
+sim:/testbench_aes_core/dut/plaintext \
+sim:/testbench_aes_core/dut/done \
+sim:/testbench_aes_core/dut/cyphertext
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/y0 \
+sim:/testbench_aes_core/dut/y1 \
+sim:/testbench_aes_core/dut/y2 \
+sim:/testbench_aes_core/dut/y3
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/counter
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/roundKey
+add wave -position insertpoint  \
+sim:/testbench_aes_core/dut/rcon
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = ea835cf00445332d655d98ad8596b0c5, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Error: cyphertext = ea835cf00445332d655d98ad8596b0c5, expected 3925841d02dc09fbdc118597196a0b32
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_starter.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Testbench ran successfully
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48
+# Compile of aes_core_tb.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "aes_core(fast__1)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.aes_core(fast)
+# Loading work.RoundKey(fast__1)
+# Loading work.RotWord(fast__1)
+# Loading work.subBytesColumn(fast__1)
+# Loading work.sbox_sync(fast__1)
+# Loading work.SubBytes(fast__1)
+# Loading work.ShiftRows(fast__1)
+# Loading work.mixcolumns(fast)
+# Loading work.mixcolumn(fast)
+# Loading work.galoismult(fast)
+# Loading work.AddRoundKey(fast__1)
+# Loading work.testbench_aes_core(fast)
+# Loading work.aes_core(fast__1)
+# Loading work.RoundKey(fast)
+# Loading work.RotWord(fast)
+# Loading work.subBytesColumn(fast)
+# Loading work.sbox_sync(fast)
+# Loading work.SubBytes(fast)
+# Loading work.ShiftRows(fast)
+# Loading work.AddRoundKey(fast)
+run 15000
+# Testbench ran successfully
+# ** Note: $stop    : C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv(48)
+#    Time: 9350 ns  Iteration: 1  Instance: /testbench_aes_core
+# Break in Module testbench_aes_core at C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/src/aes_core_tb.sv line 48

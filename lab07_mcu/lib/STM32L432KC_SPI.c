@@ -32,7 +32,7 @@ void initSPI(int br, int cpol, int cpha) {
     GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL4, 5);
     GPIOB->AFR[0] |= _VAL2FLD(GPIO_AFRL_AFSEL5, 5);
     
-    SPI1->CR1 |= _VAL2FLD(SPI_CR1_BR, br); // Set baud rate divider
+    SPI1->CR1 |= _VAL2FLD(SPI_CR1_BR, br); // Set baud rate divider 1 -> 4
 
     SPI1->CR1 |= (SPI_CR1_MSTR);
     SPI1->CR1 &= ~(SPI_CR1_CPOL | SPI_CR1_CPHA | SPI_CR1_LSBFIRST | SPI_CR1_SSM);

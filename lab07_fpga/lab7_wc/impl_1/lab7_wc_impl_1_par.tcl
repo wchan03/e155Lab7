@@ -23,6 +23,9 @@ if {[file exists {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/im
   file copy -force -- {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1_syn.udb} {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/incr/postsyn.udb}
   file copy -force -- {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1_map.udb} {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/incr/postmap.udb}
   file copy -force -- {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1.udb} {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/incr/postpar.udb}
+  if [file exists {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/lab7_pin_ass.pdc}] {
+    file copy -force -- {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/lab7_pin_ass.pdc} {C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/incr/lastrun.pdc}
+  }
 }
 
 } out]} {

@@ -48,7 +48,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2024 Lattice Semiconductor Corporation,  All rights reserved.
-Tue Nov  4 14:48:04 2025
+Wed Nov  5 15:06:52 2025
 
 
 Command Line:  C:\lscc\radiant\2024.2\ispfpga\bin\nt64\synthesis.exe -f C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1/lab7_wc_impl_1_lattice.synproj -logfile lab7_wc_impl_1_lattice.srp -gui -msgset C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/promote.xml 
@@ -94,7 +94,7 @@ Resolving user-selected strategy settings...
 ----------------------------------------------------------------
 Optimization Goal     | Area
 ----------------------------------------------------------------
-Top-level Module Name | sbox
+Top-level Module Name | aes
 ----------------------------------------------------------------
 Target Frequency      | 200.000 MHz
 ----------------------------------------------------------------
@@ -214,52 +214,163 @@ Analyzing VHDL file c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd
 INFO <35921014> - synthesis: c:/lscc/radiant/2024.2/ip/pmi/pmi_ice40up.vhd(4): analyzing package components. VHDL-1014
 INFO <35921504> - synthesis: The default VHDL library search path is now "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/impl_1". VHDL-1504
 Top module language type = Verilog.
-Top module name (Verilog, mixed language): sbox
-INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(239): compiling module sbox. VERI-1018
-WARNING <35931002> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): net sbox does not have a driver. VDB-1002
+Top module name (Verilog, mixed language): aes
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(10): compiling module aes. VERI-1018
+INFO <35901018> - synthesis: C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): compiling module HSOSC(CLKHF_DIV=2'b01). VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(43): compiling module aes_spi. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(92): compiling module aes_core. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(420): compiling module RoundKey. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(455): compiling module RotWord. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(465): compiling module subBytesColumn. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(271): compiling module sbox_sync. VERI-1018
+WARNING <35931002> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(278): net sbox does not have a driver. VDB-1002
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(351): compiling module SubBytes. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(374): compiling module ShiftRows. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(295): compiling module mixcolumns. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(311): compiling module mixcolumn. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(338): compiling module galoismult. VERI-1018
+INFO <35901018> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(413): compiling module AddRoundKey. VERI-1018
 
 <A name="lse_parameter"></A><B><U><big>Parameter Setting</big></U></B>
 
 [Parameter Setting Section Start]
 
+	[Parameter Settings for Instance(s): hf_osc]
+	(Module: HSOSC)
+		CLKHF_DIV                 2'b01
+
 [Parameter Setting Section End]
-WARNING <35931038> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): ram sbox_original_ramnet has no write-port on it. VDB-1038
+WARNING <35931038> - synthesis: c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(278): ram sbox_original_ramnet has no write-port on it. VDB-1038
+INFO <35001774> - synthesis: Extracted state machine for register '\core/state' with one-hot encoding
+State machine has 20 reachable states with original encodings of:
+
+ 00000000 
+
+ 00000001 
+
+ 00000010 
+
+ 00000011 
+
+ 00000100 
+
+ 00000101 
+
+ 00000110 
+
+ 00000111 
+
+ 00001000 
+
+ 00001001 
+
+ 00001010 
+
+ 00001011 
+
+ 00001100 
+
+ 00001101 
+
+ 00001110 
+
+ 00001111 
+
+ 00010000 
+
+ 00010001 
+
+ 00010010 
+
+ 00010011 
+
+original encoding -> new encoding (one-hot encoding)
+
+ 00000000 -> 00000000000000000001
+
+ 00000001 -> 00000000000000000010
+
+ 00000010 -> 00000000000000000100
+
+ 00000011 -> 00000000000000001000
+
+ 00000100 -> 00000000000000010000
+
+ 00000101 -> 00000000000000100000
+
+ 00000110 -> 00000000000001000000
+
+ 00000111 -> 00000000000010000000
+
+ 00001000 -> 00000000000100000000
+
+ 00001001 -> 00000000001000000000
+
+ 00001010 -> 00000000010000000000
+
+ 00001011 -> 00000000100000000000
+
+ 00001100 -> 00000001000000000000
+
+ 00001101 -> 00000010000000000000
+
+ 00001110 -> 00000100000000000000
+
+ 00001111 -> 00001000000000000000
+
+ 00010000 -> 00010000000000000000
+
+ 00010001 -> 00100000000000000000
+
+ 00010010 -> 01000000000000000000
+
+ 00010011 -> 10000000000000000000
 
 
 
+
+INFO <35002039> - synthesis: Special Primitives IFD1P3AZ and OFD1P3AZ for ThunderPlus are synthesized using IOL_B.
 
 
 <A name="lse_area"></A><B><U><big>Area Report</big></U></B>
 
-################### Begin Area Report (sbox)######################
-Number of register bits => 0 of 5280 (0 % )
-IB => 8
-LUT4 => 216
-OB => 8
+################### Begin Area Report (aes)######################
+Number of register bits => 1212 of 5280 (22 % )
+EBR_B => 20
+CCU2 => 17
+FD1P3XZ => 1212
+HSOSC => 1
+IB => 3
+INV => 1
+IOL_B => 1
+LUT4 => 1345
+OB => 2
 ################### End Area Report ##################
 Number of odd-length carry chains : 0
-Number of even-length carry chains : 0
+Number of even-length carry chains : 1
 
 
 <A name="lse_clock"></A><B><U><big>Clock Report</big></U></B>
 
 ################### Begin Clock Report ######################
 Clock Nets
-Number of Clocks: 0
+Number of Clocks: 2
+  Net : sck_c, loads : 1
+  Net : int_osc, loads : 0
 Clock Enable Nets
 Number of Clock Enables: 0
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : a_c_3, loads : 128
-  Net : a_c_2, loads : 128
-  Net : a_c_1, loads : 128
-  Net : a_c_0, loads : 128
-  Net : a_c_5, loads : 49
-  Net : a_c_4, loads : 42
-  Net : a_c_6, loads : 16
-  Net : a_c_7, loads : 13
-  Net : y_c_7, loads : 8
-  Net : y_c_6, loads : 8
+  Net : core/n180, loads : 290
+  Net : core/n3457, loads : 258
+  Net : core/n1_adj_1119, loads : 163
+  Net : core/n189, loads : 132
+  Net : core/n194, loads : 131
+  Net : core/n186, loads : 129
+  Net : core/n1476, loads : 129
+  Net : core/n185, loads : 129
+  Net : core/n192, loads : 129
+  Net : core/n1606, loads : 129
 ################### End Clock Report ##################
 
 
@@ -271,13 +382,13 @@ Constraint Summary:
   Total number of constraints dropped: 0
 ###################  End Constraint Report  ######################
 
-Peak Memory Usage: 95 MB
+Peak Memory Usage: 117 MB
 
 --------------------------------------------------------------
-Total CPU Time: 5 secs 
+Total CPU Time: 6 secs 
 Total REAL Time: 13 secs 
 --------------------------------------------------------------
-Checksum -- synthesis -- netlist: 8642f9a639745d48ba47258b49396eadcdca0414
+Checksum -- synthesis -- netlist: ec24741747232fc64bb05862e8852e2296937446
 
 
 

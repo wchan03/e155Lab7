@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BaliMessageLog>
+    <Task name="Export">
+        <Message>
+            <ID>1081100</ID>
+            <Severity>1</Severity>
+            <Dynamic>Bitstream authenticated.</Dynamic>
+        </Message>
+    </Task>
     <Task name="Synthesis">
         <Message>
             <ID>35935050</ID>
@@ -337,26 +344,140 @@
         <Message>
             <ID>35901018</ID>
             <Severity>1</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(239): </Dynamic>
-            <Dynamic>sbox</Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(10): </Dynamic>
+            <Dynamic>aes</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>239</Navigation>
+            <Navigation>10</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v(756): </Dynamic>
+            <Dynamic>HSOSC(CLKHF_DIV=2'b01)</Dynamic>
+            <Navigation>C:/lscc/radiant/2024.2/ispfpga/../cae_library/synthesis/verilog/iCE40UP.v</Navigation>
+            <Navigation>756</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(43): </Dynamic>
+            <Dynamic>aes_spi</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>43</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(92): </Dynamic>
+            <Dynamic>aes_core</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>92</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(420): </Dynamic>
+            <Dynamic>RoundKey</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>420</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(455): </Dynamic>
+            <Dynamic>RotWord</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>455</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(465): </Dynamic>
+            <Dynamic>subBytesColumn</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>465</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(271): </Dynamic>
+            <Dynamic>sbox_sync</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>271</Navigation>
         </Message>
         <Message>
             <ID>35931002</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(278): </Dynamic>
             <Dynamic>sbox</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>244</Navigation>
+            <Navigation>278</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(351): </Dynamic>
+            <Dynamic>SubBytes</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>351</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(374): </Dynamic>
+            <Dynamic>ShiftRows</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>374</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(295): </Dynamic>
+            <Dynamic>mixcolumns</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>295</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(311): </Dynamic>
+            <Dynamic>mixcolumn</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>311</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(338): </Dynamic>
+            <Dynamic>galoismult</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>338</Navigation>
+        </Message>
+        <Message>
+            <ID>35901018</ID>
+            <Severity>1</Severity>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(413): </Dynamic>
+            <Dynamic>AddRoundKey</Dynamic>
+            <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
+            <Navigation>413</Navigation>
         </Message>
         <Message>
             <ID>35931038</ID>
             <Severity>16</Severity>
-            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(244): </Dynamic>
+            <Dynamic>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv(278): </Dynamic>
             <Dynamic>sbox_original_ramnet</Dynamic>
             <Navigation>c:/users/wchan/documents/github/e155lab7/lab07_fpga/src/aes_starter.sv</Navigation>
-            <Navigation>244</Navigation>
+            <Navigation>278</Navigation>
+        </Message>
+        <Message>
+            <ID>35001774</ID>
+            <Severity>1</Severity>
+            <Dynamic>\core/state</Dynamic>
+            <Dynamic>one-hot</Dynamic>
+        </Message>
+        <Message>
+            <ID>35002039</ID>
+            <Severity>1</Severity>
         </Message>
     </Task>
 </BaliMessageLog>

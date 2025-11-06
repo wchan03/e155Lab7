@@ -7,7 +7,7 @@
 //   Top level module with SPI interface and SPI core
 /////////////////////////////////////////////
 
-module aes(input  logic clk,
+module aes(//input  logic clk,
            input  logic sck, 
            input  logic sdi,
            output logic sdo,
@@ -15,9 +15,22 @@ module aes(input  logic clk,
            output logic done);
                     
     logic [127:0] key, plaintext, cyphertext;
-            
+	logic int_osc, clk; // internal clock
+	logic [19:0] counter;
+
+	//Create clock 
+	// Internal high-speed oscillator
+	HSOSC #(.CLKHF_DIV(2'b01)) 
+		hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+
+	// Counter
+	always_ff @(posedge int_osc) begin  
+		counter <= counter + 19'd2; //operates at ~91.5Hz
+	end 
+	
+	assign clk = counter[19];
     aes_spi spi(sck, sdi, sdo, done, key, plaintext, cyphertext);   
-    aes_core core(clk, load, key, plaintext, done, cyphertext);
+    aes_core core(int_osc, load, key, plaintext, done, cyphertext);
 endmodule
 
 /////////////////////////////////////////////
@@ -85,7 +98,7 @@ module aes_core(input  logic         clk,
 
     //set up intermediate logic
     logic [127:0] rk_in, rk_out, roundKey;
-	  logic [7:0] rcon = 8'h01; 
+	logic [7:0] rcon; // = 8'h01; 
     logic [127:0] temptext, y0, y1, y2, y3, a0, a1, a2, a3;
     int counter;
 
@@ -181,7 +194,7 @@ module aes_core(input  logic         clk,
           //rcon calculations
           if(counter == 9) rcon <= 8'h1b;
           else if(counter == 1) rcon <= 8'h01;
-          else rcon <= rcon *2;
+          else rcon <= rcon * 8'h2;
 
           //calculate next round key
           rk_in <= roundKey; //old out should be new in 
@@ -202,7 +215,7 @@ module aes_core(input  logic         clk,
         end
         ARK2: begin
           counter <= counter + 1;
-          rcon = 7'h36;
+          rcon <= 7'h36;
           rk_in <= roundKey; //final round key
         end
         ARK2Delay2: begin

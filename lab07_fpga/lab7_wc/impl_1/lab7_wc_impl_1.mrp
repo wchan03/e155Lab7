@@ -1,42 +1,44 @@
 
                          Lattice Mapping Report File
 
-Design:  sbox
+Design:  aes
 Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
 Performance Grade:  High-Performance_1.2V
 
 Mapper:    version Radiant Software (64-bit) 2024.2.0.3.0
-Mapped on: Tue Nov  4 14:48:26 2025
+Mapped on: Wed Nov  5 15:07:15 2025
 
 Design Information
 ------------------
 
-Command line:   map -i lab7_wc_impl_1_syn.udb -o lab7_wc_impl_1_map.udb -mp
-     lab7_wc_impl_1.mrp -hierrpt -gui -msgset
+Command line:   map -pdc C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab
+     7_wc/lab7_pin_ass.pdc -i lab7_wc_impl_1_syn.udb -o lab7_wc_impl_1_map.udb
+     -mp lab7_wc_impl_1.mrp -hierrpt -gui -msgset
      C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc/promote.xml
 
 Design Summary
 --------------
 
-   Number of slice registers:   0 out of  5280 (0%)
-   Number of I/O registers:      0 out of   117 (0%)
-   Number of LUT4s:           216 out of  5280 (4%)
-      Number of logic LUT4s:             216
-      Number of ripple logic:              0 (0 LUT4s)
-   Number of IO sites used:   16 out of 39 (41%)
-      Number of IO sites used for general PIO: 16
+   Number of slice registers: 1212 out of  5280 (23%)
+   Number of I/O registers:      1 out of   117 (1%)
+   Number of LUT4s:           1910 out of  5280 (36%)
+      Number of logic LUT4s:             1346
+      Number of inserted feedthru LUT4s: 530
+      Number of ripple logic:             17 (34 LUT4s)
+   Number of IO sites used:   5 out of 39 (13%)
+      Number of IO sites used for general PIO: 5
       Number of IO sites used for I3C: 0 out of 2 (0%)
       (note: If I3C is not used, its site can be used as general PIO)
-      Number of IO sites used for PIO+I3C: 16 out of 36 (44%)
+      Number of IO sites used for PIO+I3C: 5 out of 36 (14%)
       Number of IO sites used for OD+RGB IO buffers: 0 out of 3 (0%)
       (note: If RGB LED drivers are not used, sites can be used as OD outputs,
        see TN1288 iCE40 LED Driver Usage Guide)
-      Number of IO sites used for PIO+I3C+OD+RGB: 16 out of 39 (41%)
+      Number of IO sites used for PIO+I3C+OD+RGB: 5 out of 39 (13%)
    Number of DSPs:             0 out of 8 (0%)
    Number of I2Cs:             0 out of 2 (0%)
-   Number of High Speed OSCs:  0 out of 1 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
    Number of Low Speed OSCs:   0 out of 1 (0%)
    Number of RGB PWM:          0 out of 1 (0%)
    Number of RGB Drivers:      0 out of 1 (0%)
@@ -44,22 +46,20 @@ Design Summary
    Number of SRAMs:            0 out of 4 (0%)
    Number of WARMBOOTs:        0 out of 1 (0%)
    Number of SPIs:             0 out of 2 (0%)
-   Number of EBRs:             0 out of 30 (0%)
+   Number of EBRs:             20 out of 30 (67%)
    Number of PLLs:             0 out of 1 (0%)
-   Number of Clocks:  0
-   Number of Clock Enables:  0
-   Number of LSRs:  0
-   Top 10 highest fanout non-clock nets:
-      Net a_c_0: 128 loads
-      Net a_c_1: 128 loads
-      Net a_c_2: 128 loads
-      Net a_c_3: 128 loads
-      Net a_c_5: 49 loads
-      Net a_c_4: 42 loads
-      Net a_c_6: 16 loads
-      Net a_c_7: 13 loads
-      Net n1139: 1 loads
-      Net n173: 1 loads
+   Number of Clocks:  2
+      Net sck_c: 385 loads, 383 rising, 2 falling (Driver: Port sck)
+      Net int_osc: 848 loads, 848 rising, 0 falling (Driver: Pin
+     hf_osc.osc_inst/CLKHF)
+   Number of Clock Enables:  3
+      Net VCC_net: 61 loads, 0 SLICEs
+      Net core.n186: 128 loads, 128 SLICEs
+      Net core.n1_adj_1119: 128 loads, 128 SLICEs
+   Number of LSRs:  294
+      Net core.n4: 1 loads, 1 SLICEs
+      Net core.n6: 1 loads, 1 SLICEs
+      Net core.n3_adj_1121: 1 loads, 1 SLICEs
 
                                     Page 1
 
@@ -67,6 +67,355 @@ Design Summary
 
 
 
+Design Summary (cont)
+---------------------
+      Pin load: 19 loads, 19 SLICEs (Net: load_c)
+      Net core.n2_adj_1346: 1 loads, 1 SLICEs
+      Net core.n4_adj_1123: 1 loads, 1 SLICEs
+      Net core.n6_adj_1125: 1 loads, 1 SLICEs
+      Net core.n6_adj_1127: 1 loads, 1 SLICEs
+      Net core.n4_adj_1128: 1 loads, 1 SLICEs
+      Net core.n6_adj_1131: 1 loads, 1 SLICEs
+      Net core.n4_adj_1132: 1 loads, 1 SLICEs
+      Net core.n6_adj_1135: 1 loads, 1 SLICEs
+      Net core.n4_adj_1136: 1 loads, 1 SLICEs
+      Net core.n6_adj_1139: 1 loads, 1 SLICEs
+      Net core.n4_adj_1141: 1 loads, 1 SLICEs
+      Net core.n6_adj_1143: 1 loads, 1 SLICEs
+      Net core.n6_adj_1145: 1 loads, 1 SLICEs
+      Net core.n4_adj_1146: 1 loads, 1 SLICEs
+      Net core.n4_adj_1149: 1 loads, 1 SLICEs
+      Net core.n6_adj_1150: 1 loads, 1 SLICEs
+      Net core.n6_adj_1153: 1 loads, 1 SLICEs
+      Net core.n4_adj_1155: 1 loads, 1 SLICEs
+      Net core.n6_adj_1157: 1 loads, 1 SLICEs
+      Net core.n4_adj_1159: 1 loads, 1 SLICEs
+      Net core.n4_adj_1160: 1 loads, 1 SLICEs
+      Net core.n4_adj_1163: 1 loads, 1 SLICEs
+      Net core.n4_adj_1165: 1 loads, 1 SLICEs
+      Net core.n4_adj_1167: 1 loads, 1 SLICEs
+      Net core.n4_adj_1168: 1 loads, 1 SLICEs
+      Net core.n4_adj_1171: 1 loads, 1 SLICEs
+      Net core.n4_adj_1173: 1 loads, 1 SLICEs
+      Net core.n4_adj_1174: 1 loads, 1 SLICEs
+      Net core.n4_adj_1177: 1 loads, 1 SLICEs
+      Net core.n4_adj_1179: 1 loads, 1 SLICEs
+      Net core.n4_adj_1180: 1 loads, 1 SLICEs
+      Net core.n4_adj_1183: 1 loads, 1 SLICEs
+      Net core.n4_adj_1185: 1 loads, 1 SLICEs
+      Net core.n4_adj_1186: 1 loads, 1 SLICEs
+      Net core.n4_adj_1188: 1 loads, 1 SLICEs
+      Net core.n4_adj_1191: 1 loads, 1 SLICEs
+      Net core.n4_adj_1193: 1 loads, 1 SLICEs
+      Net core.n4_adj_1194: 1 loads, 1 SLICEs
+      Net core.n4_adj_1197: 1 loads, 1 SLICEs
+      Net core.n4_adj_1199: 1 loads, 1 SLICEs
+      Net core.n4_adj_1200: 1 loads, 1 SLICEs
+      Net core.n4_adj_1202: 1 loads, 1 SLICEs
+      Net core.n4_adj_1205: 1 loads, 1 SLICEs
+      Net core.n4_adj_1207: 1 loads, 1 SLICEs
+      Net core.n4_adj_1208: 1 loads, 1 SLICEs
+      Net core.n4_adj_1210: 1 loads, 1 SLICEs
+      Net core.n4_adj_1214: 1 loads, 1 SLICEs
+      Net core.n4_adj_1217: 1 loads, 1 SLICEs
+      Net core.n4_adj_1218: 1 loads, 1 SLICEs
+      Net core.n4_adj_1223: 1 loads, 1 SLICEs
+      Net core.n4_adj_1226: 1 loads, 1 SLICEs
+      Net core.n4_adj_1227: 1 loads, 1 SLICEs
+      Net core.n4_adj_1231: 1 loads, 1 SLICEs
+      Net core.n4_adj_1235: 1 loads, 1 SLICEs
+      Net core.n4_adj_1238: 1 loads, 1 SLICEs
+      Net core.n4_adj_1241: 1 loads, 1 SLICEs
+
+                                    Page 2
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net core.n4_adj_1242: 1 loads, 1 SLICEs
+      Net core.n4_adj_1247: 1 loads, 1 SLICEs
+      Net core.n4_adj_1250: 1 loads, 1 SLICEs
+      Net core.n4_adj_1251: 1 loads, 1 SLICEs
+      Net core.n4_adj_1256: 1 loads, 1 SLICEs
+      Net core.n4_adj_1259: 1 loads, 1 SLICEs
+      Net core.n4_adj_1261: 1 loads, 1 SLICEs
+      Net core.n4_adj_1264: 1 loads, 1 SLICEs
+      Net core.n4_adj_1268: 1 loads, 1 SLICEs
+      Net core.n4_adj_1272: 1 loads, 1 SLICEs
+      Net core.n4_adj_1273: 1 loads, 1 SLICEs
+      Net core.n4_adj_1278: 1 loads, 1 SLICEs
+      Net core.n4_adj_1281: 1 loads, 1 SLICEs
+      Net core.n4_adj_1282: 1 loads, 1 SLICEs
+      Net core.n4_adj_1287: 1 loads, 1 SLICEs
+      Net core.n4_adj_1291: 1 loads, 1 SLICEs
+      Net core.n193: 4 loads, 4 SLICEs
+      Net core.n4_adj_1293: 1 loads, 1 SLICEs
+      Net core.n4_adj_1297: 1 loads, 1 SLICEs
+      Net core.n4_adj_1300: 1 loads, 1 SLICEs
+      Net core.n4_adj_1301: 1 loads, 1 SLICEs
+      Net core.n4_adj_1305: 1 loads, 1 SLICEs
+      Net core.n4_adj_1307: 1 loads, 1 SLICEs
+      Net core.n4_adj_1308: 1 loads, 1 SLICEs
+      Net core.n4_adj_1311: 1 loads, 1 SLICEs
+      Net core.n4_adj_1313: 1 loads, 1 SLICEs
+      Net core.n4_adj_1315: 1 loads, 1 SLICEs
+      Net core.n4_adj_1317: 1 loads, 1 SLICEs
+      Net core.n4_adj_1319: 1 loads, 1 SLICEs
+      Net core.n4_adj_1321: 1 loads, 1 SLICEs
+      Net core.n4_adj_1323: 1 loads, 1 SLICEs
+      Net core.n4_adj_1325: 1 loads, 1 SLICEs
+      Net core.n4_adj_1327: 1 loads, 1 SLICEs
+      Net core.n4_adj_1329: 1 loads, 1 SLICEs
+      Net core.n4_adj_1331: 1 loads, 1 SLICEs
+      Net core.n4_adj_1333: 1 loads, 1 SLICEs
+      Net core.n4_adj_1335: 1 loads, 1 SLICEs
+      Net core.n4_adj_1337: 1 loads, 1 SLICEs
+      Net core.n4_adj_1339: 1 loads, 1 SLICEs
+      Net core.n4_adj_1341: 1 loads, 1 SLICEs
+      Net core.n4_adj_1343: 1 loads, 1 SLICEs
+      Net core.n4_adj_1345: 1 loads, 1 SLICEs
+      Net core.n2_adj_1347: 1 loads, 1 SLICEs
+      Net core.n2_adj_1348: 1 loads, 1 SLICEs
+      Net core.n2_adj_1349: 1 loads, 1 SLICEs
+      Net core.n2_adj_1350: 1 loads, 1 SLICEs
+      Net core.n2_adj_1351: 1 loads, 1 SLICEs
+      Net core.n2_adj_1352: 1 loads, 1 SLICEs
+      Net core.n2_adj_1353: 1 loads, 1 SLICEs
+      Net core.n2_adj_1354: 1 loads, 1 SLICEs
+      Net core.n2_adj_1355: 1 loads, 1 SLICEs
+      Net core.n2_adj_1356: 1 loads, 1 SLICEs
+      Net core.n2_adj_1357: 1 loads, 1 SLICEs
+      Net core.n2_adj_1358: 1 loads, 1 SLICEs
+      Net core.n2_adj_1359: 1 loads, 1 SLICEs
+      Net core.n2_adj_1360: 1 loads, 1 SLICEs
+      Net core.n2_adj_1361: 1 loads, 1 SLICEs
+
+                                    Page 3
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net core.n2_adj_1362: 1 loads, 1 SLICEs
+      Net core.n2_adj_1363: 1 loads, 1 SLICEs
+      Net core.n2_adj_1364: 1 loads, 1 SLICEs
+      Net core.n2_adj_1365: 1 loads, 1 SLICEs
+      Net core.n2_adj_1366: 1 loads, 1 SLICEs
+      Net core.n2_adj_1367: 1 loads, 1 SLICEs
+      Net core.n2_adj_1368: 1 loads, 1 SLICEs
+      Net core.n2_adj_1369: 1 loads, 1 SLICEs
+      Net core.n2_adj_1370: 1 loads, 1 SLICEs
+      Net core.n2_adj_1371: 1 loads, 1 SLICEs
+      Net core.n2_adj_1372: 1 loads, 1 SLICEs
+      Net core.n2_adj_1373: 1 loads, 1 SLICEs
+      Net core.n2_adj_1374: 1 loads, 1 SLICEs
+      Net core.n2_adj_1375: 1 loads, 1 SLICEs
+      Net core.n2_adj_1376: 1 loads, 1 SLICEs
+      Net core.n4_adj_1379: 1 loads, 1 SLICEs
+      Net core.n4_adj_1381: 1 loads, 1 SLICEs
+      Net core.n4_adj_1383: 1 loads, 1 SLICEs
+      Net core.n4_adj_1385: 1 loads, 1 SLICEs
+      Net core.n4_adj_1387: 1 loads, 1 SLICEs
+      Net core.n4_adj_1389: 1 loads, 1 SLICEs
+      Net core.n4_adj_1391: 1 loads, 1 SLICEs
+      Net core.n4_adj_1393: 1 loads, 1 SLICEs
+      Net core.n4_adj_1395: 1 loads, 1 SLICEs
+      Net core.n4_adj_1397: 1 loads, 1 SLICEs
+      Net core.n4_adj_1399: 1 loads, 1 SLICEs
+      Net core.n4_adj_1401: 1 loads, 1 SLICEs
+      Net core.n4_adj_1403: 1 loads, 1 SLICEs
+      Net core.n4_adj_1405: 1 loads, 1 SLICEs
+      Net core.n4_adj_1407: 1 loads, 1 SLICEs
+      Net core.n4_adj_1409: 1 loads, 1 SLICEs
+      Net core.n4_adj_1411: 1 loads, 1 SLICEs
+      Net core.n4_adj_1413: 1 loads, 1 SLICEs
+      Net core.n4_adj_1415: 1 loads, 1 SLICEs
+      Net core.n4_adj_1417: 1 loads, 1 SLICEs
+      Net core.n4_adj_1419: 1 loads, 1 SLICEs
+      Net core.n4_adj_1421: 1 loads, 1 SLICEs
+      Net core.n4_adj_1423: 1 loads, 1 SLICEs
+      Net core.n4_adj_1425: 1 loads, 1 SLICEs
+      Net core.n4_adj_1427: 1 loads, 1 SLICEs
+      Net core.n4_adj_1429: 1 loads, 1 SLICEs
+      Net core.n4_adj_1431: 1 loads, 1 SLICEs
+      Net core.n4_adj_1433: 1 loads, 1 SLICEs
+      Net core.n4_adj_1435: 1 loads, 1 SLICEs
+      Net core.n4_adj_1437: 1 loads, 1 SLICEs
+      Net core.n4_adj_1439: 1 loads, 1 SLICEs
+      Net core.n4_adj_1441: 1 loads, 1 SLICEs
+      Net core.n4_adj_1443: 1 loads, 1 SLICEs
+      Net core.n4_adj_1445: 1 loads, 1 SLICEs
+      Net core.n4_adj_1447: 1 loads, 1 SLICEs
+      Net core.n4_adj_1449: 1 loads, 1 SLICEs
+      Net core.n4_adj_1451: 1 loads, 1 SLICEs
+      Net core.n4_adj_1453: 1 loads, 1 SLICEs
+      Net core.n4_adj_1455: 1 loads, 1 SLICEs
+      Net core.n4_adj_1457: 1 loads, 1 SLICEs
+      Net core.n4_adj_1459: 1 loads, 1 SLICEs
+      Net core.n6_adj_1460: 1 loads, 1 SLICEs
+
+                                    Page 4
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net core.n6_adj_1462: 1 loads, 1 SLICEs
+      Net core.n6_adj_1464: 1 loads, 1 SLICEs
+      Net core.n6_adj_1466: 1 loads, 1 SLICEs
+      Net core.n6_adj_1468: 1 loads, 1 SLICEs
+      Net core.n6_adj_1470: 1 loads, 1 SLICEs
+      Net core.n6_adj_1472: 1 loads, 1 SLICEs
+      Net core.n6_adj_1474: 1 loads, 1 SLICEs
+      Net core.n6_adj_1476: 1 loads, 1 SLICEs
+      Net core.n6_adj_1478: 1 loads, 1 SLICEs
+      Net core.n6_adj_1480: 1 loads, 1 SLICEs
+      Net core.n6_adj_1482: 1 loads, 1 SLICEs
+      Net core.n6_adj_1484: 1 loads, 1 SLICEs
+      Net core.n6_adj_1486: 1 loads, 1 SLICEs
+      Net core.n6_adj_1488: 1 loads, 1 SLICEs
+      Net core.n6_adj_1490: 1 loads, 1 SLICEs
+      Net core.n6_adj_1492: 1 loads, 1 SLICEs
+      Net core.n6_adj_1494: 1 loads, 1 SLICEs
+      Net core.n6_adj_1496: 1 loads, 1 SLICEs
+      Net core.n6_adj_1498: 1 loads, 1 SLICEs
+      Net core.n6_adj_1500: 1 loads, 1 SLICEs
+      Net core.n6_adj_1502: 1 loads, 1 SLICEs
+      Net core.n6_adj_1504: 1 loads, 1 SLICEs
+      Net core.n6_adj_1506: 1 loads, 1 SLICEs
+      Net core.n6_adj_1508: 1 loads, 1 SLICEs
+      Net core.n6_adj_1510: 1 loads, 1 SLICEs
+      Net core.n6_adj_1512: 1 loads, 1 SLICEs
+      Net core.n6_adj_1514: 1 loads, 1 SLICEs
+      Net core.n6_adj_1516: 1 loads, 1 SLICEs
+      Net core.n6_adj_1518: 1 loads, 1 SLICEs
+      Net core.n6_adj_1520: 1 loads, 1 SLICEs
+      Net core.n6_adj_1522: 1 loads, 1 SLICEs
+      Net core.n6_adj_1524: 1 loads, 1 SLICEs
+      Net core.n6_adj_1526: 1 loads, 1 SLICEs
+      Net core.n6_adj_1528: 1 loads, 1 SLICEs
+      Net core.n6_adj_1530: 1 loads, 1 SLICEs
+      Net core.n6_adj_1532: 1 loads, 1 SLICEs
+      Net core.n6_adj_1534: 1 loads, 1 SLICEs
+      Net core.n6_adj_1536: 1 loads, 1 SLICEs
+      Net core.n6_adj_1538: 1 loads, 1 SLICEs
+      Net core.n6_adj_1540: 1 loads, 1 SLICEs
+      Net core.n6_adj_1542: 1 loads, 1 SLICEs
+      Net core.n6_adj_1544: 1 loads, 1 SLICEs
+      Net core.n6_adj_1546: 1 loads, 1 SLICEs
+      Net core.n6_adj_1548: 1 loads, 1 SLICEs
+      Net core.n6_adj_1550: 1 loads, 1 SLICEs
+      Net core.n6_adj_1552: 1 loads, 1 SLICEs
+      Net core.n6_adj_1554: 1 loads, 1 SLICEs
+      Net core.n6_adj_1556: 1 loads, 1 SLICEs
+      Net core.n6_adj_1558: 1 loads, 1 SLICEs
+      Net core.n6_adj_1560: 1 loads, 1 SLICEs
+      Net core.n6_adj_1562: 1 loads, 1 SLICEs
+      Net core.n6_adj_1564: 1 loads, 1 SLICEs
+      Net core.n6_adj_1566: 1 loads, 1 SLICEs
+      Net core.n6_adj_1568: 1 loads, 1 SLICEs
+      Net core.n6_adj_1570: 1 loads, 1 SLICEs
+      Net core.n6_adj_1572: 1 loads, 1 SLICEs
+      Net core.n6_adj_1574: 1 loads, 1 SLICEs
+
+                                    Page 5
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net core.n6_adj_1576: 1 loads, 1 SLICEs
+      Net core.n6_adj_1578: 1 loads, 1 SLICEs
+      Net core.n6_adj_1580: 1 loads, 1 SLICEs
+      Net core.n6_adj_1582: 1 loads, 1 SLICEs
+      Net core.n6_adj_1584: 1 loads, 1 SLICEs
+      Net core.n6_adj_1586: 1 loads, 1 SLICEs
+      Net core.n6_adj_1588: 1 loads, 1 SLICEs
+      Net core.n6_adj_1590: 1 loads, 1 SLICEs
+      Net core.n6_adj_1592: 1 loads, 1 SLICEs
+      Net core.n6_adj_1594: 1 loads, 1 SLICEs
+      Net core.n6_adj_1596: 1 loads, 1 SLICEs
+      Net core.n6_adj_1598: 1 loads, 1 SLICEs
+      Net core.n6_adj_1600: 1 loads, 1 SLICEs
+      Net core.n6_adj_1602: 1 loads, 1 SLICEs
+      Net core.n6_adj_1604: 1 loads, 1 SLICEs
+      Net core.n6_adj_1606: 1 loads, 1 SLICEs
+      Net core.n6_adj_1608: 1 loads, 1 SLICEs
+      Net core.n6_adj_1610: 1 loads, 1 SLICEs
+      Net core.n6_adj_1612: 1 loads, 1 SLICEs
+      Net core.n6_adj_1614: 1 loads, 1 SLICEs
+      Net core.n6_adj_1616: 1 loads, 1 SLICEs
+      Net core.n6_adj_1618: 1 loads, 1 SLICEs
+      Net core.n6_adj_1620: 1 loads, 1 SLICEs
+      Net core.n6_adj_1622: 1 loads, 1 SLICEs
+      Net core.n6_adj_1624: 1 loads, 1 SLICEs
+      Net core.n6_adj_1626: 1 loads, 1 SLICEs
+      Net core.n6_adj_1628: 1 loads, 1 SLICEs
+      Net core.n6_adj_1630: 1 loads, 1 SLICEs
+      Net core.n6_adj_1632: 1 loads, 1 SLICEs
+      Net core.n6_adj_1634: 1 loads, 1 SLICEs
+      Net core.n6_adj_1636: 1 loads, 1 SLICEs
+      Net core.n6_adj_1638: 1 loads, 1 SLICEs
+      Net core.n6_adj_1640: 1 loads, 1 SLICEs
+      Net core.n6_adj_1642: 1 loads, 1 SLICEs
+      Net core.n6_adj_1644: 1 loads, 1 SLICEs
+      Net core.n6_adj_1646: 1 loads, 1 SLICEs
+      Net core.n6_adj_1648: 1 loads, 1 SLICEs
+      Net core.n6_adj_1650: 1 loads, 1 SLICEs
+      Net core.n6_adj_1652: 1 loads, 1 SLICEs
+      Net core.n6_adj_1654: 1 loads, 1 SLICEs
+      Net core.n6_adj_1656: 1 loads, 1 SLICEs
+      Net core.n6_adj_1658: 1 loads, 1 SLICEs
+      Net core.n6_adj_1660: 1 loads, 1 SLICEs
+      Net core.n6_adj_1662: 1 loads, 1 SLICEs
+      Net core.n6_adj_1664: 1 loads, 1 SLICEs
+      Net core.n6_adj_1666: 1 loads, 1 SLICEs
+      Net core.n6_adj_1668: 1 loads, 1 SLICEs
+      Net core.n6_adj_1670: 1 loads, 1 SLICEs
+      Net core.n6_adj_1672: 1 loads, 1 SLICEs
+      Net core.n6_adj_1674: 1 loads, 1 SLICEs
+      Net core.n6_adj_1676: 1 loads, 1 SLICEs
+      Net core.n6_adj_1678: 1 loads, 1 SLICEs
+      Net core.n6_adj_1680: 1 loads, 1 SLICEs
+      Net core.n6_adj_1682: 1 loads, 1 SLICEs
+      Net core.n6_adj_1684: 1 loads, 1 SLICEs
+      Net core.n6_adj_1686: 1 loads, 1 SLICEs
+      Net core.n6_adj_1688: 1 loads, 1 SLICEs
+
+                                    Page 6
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net core.n6_adj_1690: 1 loads, 1 SLICEs
+      Net core.n6_adj_1692: 1 loads, 1 SLICEs
+      Net core.n6785: 1 loads, 1 SLICEs
+      Net core.n7150: 1 loads, 1 SLICEs
+      Net core.n7151: 1 loads, 1 SLICEs
+      Net core.n2: 1 loads, 1 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net core.n180: 290 loads
+      Net core.n3457: 256 loads
+      Net core.n1_adj_1119: 162 loads
+      Net core.n189: 132 loads
+      Net core.n194: 131 loads
+      Net core.n185: 129 loads
+      Net core.n186: 129 loads
+      Net core.n192: 129 loads
+      Net core.n1476: 128 loads
+      Net wasdone: 128 loads
 
 
 
@@ -88,47 +437,94 @@ IO (PIO) Attributes
 | IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
 |                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| y[7]                | OUTPUT    |           |       |       |           |
+| sdo                 | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| y[6]                | OUTPUT    |           |       |       |           |
+| done                | OUTPUT    |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| y[5]                | OUTPUT    |           |       |       |           |
+| sck                 | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| y[4]                | OUTPUT    |           |       |       |           |
+| sdi                 | INPUT     |           | I     |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
-| y[3]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| y[2]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| y[1]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| y[0]                | OUTPUT    |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[7]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[6]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[5]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[4]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[3]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[2]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[1]                | INPUT     |           |       |       |           |
-+---------------------+-----------+-----------+-------+-------+-----------+
-| a[0]                | INPUT     |           |       |       |           |
+| load                | INPUT     |           |       |       |           |
 +---------------------+-----------+-----------+-------+-------+-----------+
 
 Removed logic
 -------------
 
-Block a_pad[7].vlo_inst was optimized away.
-Block y_pad[7].vhi_inst was optimized away.
+Block spi/i10_1_lut was optimized away.
+Block hf_osc.vlo_inst was optimized away.
 
 
-                                    Page 2
+
+
+
+                                    Page 7
+
+
+
+
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            hf_osc.osc_inst
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     int_osc
+  DIV Setting:                                  01
+
+ASIC Components
+---------------
+
+Instance Name: spi/key_i0
+         Type: IOLOGIC
+Instance Name: core/sb/b9/a0_72__I_0
+         Type: EBR
+Instance Name: core/sb/b8/a0_64__I_0
+         Type: EBR
+Instance Name: core/sb/b7/a0_56__I_0
+         Type: EBR
+Instance Name: core/sb/b6/a0_48__I_0
+         Type: EBR
+Instance Name: core/sb/b5/a0_40__I_0
+         Type: EBR
+Instance Name: core/sb/b4/a0_32__I_0
+         Type: EBR
+Instance Name: core/sb/b3/a0_24__I_0
+         Type: EBR
+Instance Name: core/sb/b2/a0_16__I_0
+         Type: EBR
+Instance Name: core/sb/b1/a0_8__I_0
+         Type: EBR
+Instance Name: core/sb/b15/a0_120__I_0
+         Type: EBR
+Instance Name: core/sb/b14/a0_112__I_0
+         Type: EBR
+Instance Name: core/sb/b13/a0_104__I_0
+         Type: EBR
+Instance Name: core/sb/b12/a0_96__I_0
+         Type: EBR
+Instance Name: core/sb/b11/a0_88__I_0
+         Type: EBR
+Instance Name: core/sb/b10/a0_80__I_0
+         Type: EBR
+Instance Name: core/sb/b0/a0_0__I_0
+         Type: EBR
+Instance Name: core/rk/sbc/b3/rk_in_16__I_0
+         Type: EBR
+Instance Name: core/rk/sbc/b2/rk_in_8__I_0
+         Type: EBR
+Instance Name: core/rk/sbc/b1/rk_in_0__I_0
+         Type: EBR
+Instance Name: core/rk/sbc/b0/rk_in_24__I_0
+         Type: EBR
+Instance Name: hf_osc.osc_inst
+         Type: HFOSC
+
+
+
+                                    Page 8
 
 
 
@@ -137,7 +533,7 @@ Block y_pad[7].vhi_inst was optimized away.
 Constraint Summary
 ------------------
 
-   Total number of constraints: 0
+   Total number of constraints: 6
    Total number of constraints dropped: 0
 
 Run Time and Memory Usage
@@ -145,8 +541,8 @@ Run Time and Memory Usage
 
    Total CPU Time: 0 secs
    Total REAL Time: 0 secs
-   Peak Memory Usage: 64 MB
-Checksum -- map: 13f478c9b44a0e6346dcc90010587394fd09a9b5
+   Peak Memory Usage: 99 MB
+Checksum -- map: c1f6d97a6f349d83ed80e80bb79f8cca9f797895
 
 
 
@@ -194,7 +590,7 @@ Checksum -- map: 13f478c9b44a0e6346dcc90010587394fd09a9b5
 
 
 
-                                    Page 3
+                                    Page 9
 
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.

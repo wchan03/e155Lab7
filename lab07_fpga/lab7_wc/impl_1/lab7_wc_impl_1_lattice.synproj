@@ -46,7 +46,7 @@
 
 
 -path "C:/Users/wchan/Documents/GitHub/e155Lab7/lab07_fpga/lab7_wc"
--top sbox
+-top aes
 -udb "lab7_wc_impl_1_rtl.udb"
 -output_hdl "lab7_wc_impl_1.vm"
 

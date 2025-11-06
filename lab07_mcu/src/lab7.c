@@ -71,6 +71,8 @@ int main(void) {
   // debugging LEDs
   pinMode(PA9, GPIO_OUTPUT);
   pinMode(PA10, GPIO_OUTPUT);
+  digitalWrite(PA9, 1);
+  digitalWrite(PA10, 1);
   digitalWrite(PA9, 0);
   digitalWrite(PA10, 0);
 

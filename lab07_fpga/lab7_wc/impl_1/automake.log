@@ -6,7 +6,7 @@ Loading device for application GENERIC from file 'itpa08.nph' in environment: C:
 Package Status:                     Preliminary    Version 1.5.
 Performance Hardware Data Status:   Advanced       Version 1.0.
 Loading udb::Database ...
-Design:  sbox
+Design:  aes
 Family:  iCE40UP
 Device:  iCE40UP5K
 Package: SG48
@@ -14,7 +14,7 @@ Performance Grade:   High-Performance_1.2V
 
 
 
-Successfully loading udb, 0.03 seconds
+Successfully loading udb, 0.08 seconds
 
 Initializing timer
 Starting design annotation....
@@ -22,13 +22,13 @@ High-Performance_1.2V
 
 Starting full timing analysis...
 Performance Hardware Data Status:   Advanced       Version 1.0.
-Connections ignored  0  counted  856  covered  0
+Connections ignored  776  counted  6826  covered  5654
 Changing speed to m;   changing temperature to -40
 
 STA Runtime and Peak Memory Usage :
-Total CPU Time: 0 secs 
-Total REAL Time: 0 secs 
-Peak Memory Usage: 100 MB
+Total CPU Time: 3 secs 
+Total REAL Time: 4 secs 
+Peak Memory Usage: 130 MB
 
- 0.679085s wall, 0.531250s user + 0.109375s system = 0.640625s CPU (94.3%)
+ 3.134675s wall, 2.968750s user + 0.125000s system = 3.093750s CPU (98.7%)
 

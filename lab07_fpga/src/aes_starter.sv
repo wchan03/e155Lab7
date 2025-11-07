@@ -348,6 +348,13 @@ endmodule
 
 //my functions
 
+/////////////////////////////////////////////
+// SubBytes
+//   uses sbox_sync to apply SubByte 
+//   to entire 128bit message
+/////////////////////////////////////////////
+
+
 module SubBytes(input logic [127:0] a,
                 input logic clk,
                 output logic [127:0] y);
@@ -370,6 +377,13 @@ module SubBytes(input logic [127:0] a,
   sbox_sync b15(a[127:120], clk, y[127:120]);
 
 endmodule
+
+/////////////////////////////////////////////
+// ShiftRows
+//   ShiftRow function according to AES standards
+//   Moves the front byte to the back 0 times for row 0
+
+/////////////////////////////////////////////
 
 module ShiftRows(input logic [127:0] a,
                 input logic clk,
